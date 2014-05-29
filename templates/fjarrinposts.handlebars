@@ -1,0 +1,39 @@
+<div class="container">
+	<div id="order-list" class="row">
+		<div class="col-xs-12">
+		    <table class="table table-striped">
+		    	<tr>
+		    		{{#each item in model.table-headings}}
+			    		<th>{{item}}</th>
+			    	{{/each}}
+		    	</tr>
+		    	{{#each item in model.table-items}}
+		    		<tr>
+		    			<td><a href="#">{{item.order_id}}</a> </td>
+		    			<td>{{item.name}}</td>
+		    			<td>{{item.order_type}}</td>
+		    			<td>{{trimString item.title}}</td>
+		    			<td>{{item.delivery_place}}</td>
+		    			<td>{{item.form_library}}</td>
+						<td>{{item.not_valid_after}}</td>
+						<td>
+							{{#if item.owner }}
+								<div class="btn-group">
+								  <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+								    <i class="fa fa-male"></i> {{item.owner}} <span class="caret"></span>
+								  </button>
+								  <ul class="dropdown-menu" role="menu">
+								    <li><a href="#"><i class="fa fa-male"></i> {{item.owner}}</a></li>
+								    <li><a href="#">Släpp order</a></li>
+								  </ul>
+								</div>
+							{{else}}
+								<a class="btn btn-xs btn-default" href="#">ta order</a> 
+							{{/if}}
+						</td>
+		    		</tr>
+		    	{{/each}}
+		    </table>
+	    </div>
+	</div>
+ </div><!-- end container -->
