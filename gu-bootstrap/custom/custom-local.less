@@ -1,3 +1,6 @@
+/* make scrollbar always visible */ 
+html {overflow-y: scroll;}
+
 
 header {
 	position: relative;
@@ -11,7 +14,7 @@ header {
 	}
 
 	#admin-menu {
-		margin-top: 20px;
+		margin-top: 15px;
 	}
 
 	#logo {
@@ -26,14 +29,29 @@ header {
 	}
 }
 
+.media .media-object {
+	width: 64px;
+	height: 64px;
+}
+
+#toolbar {
+	border:1px solid #ccc;
+	padding:10px;
+}
+
+#feedback {
+	background-color: @gray-lighter;
+}
+
 #order-list {
-	margin-top: 40px;
+	margin-top: 20px;
 	table {
 		td {
 			white-space: nowrap;
 			vertical-align: middle;
 		}
 	}
+
 }
 
 
@@ -44,3 +62,12 @@ footer {
 
 	}
 }
+
+.list-group {
+	a {
+		i {
+			margin-top:4px;
+		}
+	}
+}
+

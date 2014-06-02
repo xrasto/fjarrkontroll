@@ -1,15 +1,38 @@
 <div class="container">
+	<div class="row">
+		<div class="col-xs-12">	
+			<div id="toolbar">	
+				<div class="btn-group">
+				  <button type="button" class="btn btn-default btn-sm">GM</button>
+				  <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+				    <span class="caret"></span>
+				    <span class="sr-only">Toggle Dropdown</span>
+				  </button>
+				  <ul class="dropdown-menu" role="menu">
+				    <li><a href="#">Humanistiska</a></li>
+				    <li><a href="#">Pedagogen</a></li>
+				    <li><a href="#">Geo</a></li>
+				    <li><a href="#">Ekonomiska</a></li>
+				  </ul>
+				</div>
+				<a href="#" class="btn btn-default btn-sm">Mina Ordrar</a>	
+				<a href="#" class="btn btn-default btn-sm">Lån <i class="fa fa-check"></i></a>	
+				<a href="#" class="btn btn-default btn-sm">Kopia <i class="fa fa-check"></i></a>	
+			</div>
+		</div>
+	</div>
 	<div id="order-list" class="row">
 		<div class="col-xs-12">
-		    <table class="table table-striped">
+		    <table class="table table-striped table-condensed">
 		    	<tr>
 		    		{{#each item in model.table-headings}}
 			    		<th>{{item}}</th>
 			    	{{/each}}
 		    	</tr>
 		    	{{#each item in model.table-items}}
-		    		<tr>
-		    			<td><a href="#">{{item.order_id}}</a> </td>
+					<tr>
+
+		    			<td>{{#link-to 'fjarrinpost' item.order_id}}{{item.order_id}}{{/link-to}} </td>
 		    			<td>{{item.name}}</td>
 		    			<td>{{item.order_type}}</td>
 		    			<td>{{trimString item.title}}</td>
@@ -24,7 +47,7 @@
 								  </button>
 								  <ul class="dropdown-menu" role="menu">
 								    <li><a href="#"><i class="fa fa-male"></i> {{item.owner}}</a></li>
-								    <li><a href="#">Släpp order</a></li>
+								    <li><a href="#">Släpp order</a></li>	
 								  </ul>
 								</div>
 							{{else}}
