@@ -5807,6 +5807,13 @@ header #logo {
   border: 1px solid #ccc;
   padding: 10px;
 }
+#toolbar button.fixed {
+  min-width: 100px;
+}
+#toolbar select {
+  width: 120px;
+  display: inline-block;
+}
 #feedback {
   background-color: #eeeeee;
 }

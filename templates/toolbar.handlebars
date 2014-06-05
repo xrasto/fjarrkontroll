@@ -1,0 +1,7 @@
+<div id="toolbar">	
+	{{view Ember.Select classNames="form-control" content=filter2.locations optionValuePath="content.id" optionLabelPath="content.name_sv" value=filter2.currentLocation.id}}
+
+	<button {{action 'toggleMyOrders'}} {{bind-attr class=":fixed :btn :btn-sm filter4.active:btn-primary:btn-default"}} >Mina Ordrar <i {{bind-attr class=":fa :fa-check filter4.active:visible:hidden"}}></i></button>	
+	<button {{action 'toggleLoan'}} {{bind-attr class=":fixed :btn :btn-sm filter1.active:btn-primary:btn-default"}}>{{filter1.name}} <i  {{bind-attr class=":fa :fa-check filter1.active:visible:hidden"}}></i></button>	
+	<button {{action 'toggleCopy'}} {{bind-attr class=":fixed :btn :btn-sm filter3.active:btn-primary:btn-default"}}>{{filter3.name}} <i {{bind-attr class=":fa :fa-check filter3.active:visible:hidden"}}></i></button>	
+</div>
