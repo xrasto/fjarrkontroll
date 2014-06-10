@@ -15,19 +15,18 @@
 			    	<th>Titel</th>
 			    	<th>Leveransbibliotek</th>
 			    	<th>Bibliotek</th>
-			    	<th>Slutdatum</th>
+			    	<th>Status</th>
 			    	<th></th>
 		    	</tr>
 		    	{{#each item in model}}
 					<tr>
-
-		    			<td>{{#link-to 'fjarrinpost' item.order_id}}{{item.order_id}}{{/link-to}} </td>
+		    			<td>{{#link-to 'fjarrinpost' item.id}}{{item.orderId}}{{/link-to}} </td>
 		    			<td>{{item.name}}</td>
-		    			<td>{{item.order_type}}</td>
+		    			<td>{{item.orderType}}</td>
 		    			<td>{{trimString item.title}}</td>
-		    			<td>{{item.delivery_place}}</td>
-		    			<td>{{item.form_library}}</td>
-						<td>{{item.not_valid_after}}</td>
+		    			<td>{{item.deliveryPlace}}</td>
+		    			<td>{{item.formLibrary}}</td>
+						<td>Inkommen</td>
 						<td>
 							{{#if item.owner }}
 								<div class="btn-group">

@@ -1,99 +1,188 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-6">
-
 			<div class="panel panel-primary">
-			  <div class="panel-heading">Order - {{model.order_id}} <div class="status pull-right"> 
-				<div class="btn-group">
-				  <button type="button" class="btn btn-default btn-xs">GM</button>
-				  <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-				    <span class="caret"></span>
-				    <span class="sr-only">Toggle Dropdown</span>
-				  </button>
-				  <ul class="dropdown-menu" role="menu">
-				    <li><a href="#">Peddan</a></li>
-				    <li><a href="#">Handels</a></li>
-				    <li><a href="#">Human</a></li>
-				    <li><a href="#">Nått annat</a></li>
-				  </ul>
-				</div>
-				<div class="btn-group">
-				  <button type="button" class="btn btn-default btn-xs">Läst</button>
-				  <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-				    <span class="caret"></span>
-				    <span class="sr-only">Toggle Dropdown</span>
-				  </button>
-				  <ul class="dropdown-menu" role="menu">
-				    <li><a href="#">Väntar på svar</a></li>
-				    <li><a href="#">Levererad</a></li>
-				    <li><a href="#">Stängd</a></li>
-				    <li><a href="#">Makulerad</a></li>
-				  </ul>
-				</div>
+			  <div class="panel-heading">
+			  Order - {{model.orderId}} 
+			 </div>
 
-			  </div></div>
 					<table class="table table-striped table-bordered table-condensed">
 						<tr>
+							<td colspan="3">
+								<form class="form-inline" id="single-order-toolbar">
+									
+									{{#if isEditing}}
+										{{view Ember.Select classNames="form-control" content=locations optionValuePath="content.id" optionLabelPath="content.label" value=model.locationId}}
+									{{else}}
+										<button class="disabled btn btn-default">Handläggande enhet: <strong>{{model.locationId}}</strong></button>
+									{{/if}}
+									{{#if isEditing}}
+										<button {{action 'saveOrder'}} {{bind-attr class=":pull-right :btn :btn-danger :btn-md"}}><i class="fa fa-floppy-o"></i> Spara</button>
+										<button {{action 'resetOrder'}} {{bind-attr class=":pull-right :btn :btn-default :btn-md"}}><i class="fa fa-trash-o"></i> Stäng</button>
+									{{else}}
+										<button {{action 'enterEditMode'}} class="pull-right btn btn-default btn-md"><i class="fa fa-pencil-square-o"></i> Edit</button>
+									{{/if}}
+								</form>
+							</td>
+						</tr>
+						<tr>
 							<th>Titel: </th>
-							<td>{{model.title}}</td>
+							<td>
+								{{#if isEditing}}
+									{{input classNames="form-control" type="text" value=model.title}}
+								{{else}}
+									{{model.title}}
+								{{/if}}
+							</td>
+							
 						</tr>
 						<tr>
 							<th>Författare: </th>
-							<td>{{model.author}}</td>
+							<td>
+								{{#if isEditing}}
+									{{input classNames="form-control" type="text" value=model.author}}
+								{{else}}
+									{{model.author}}
+								{{/if}}
+							</td>
 						</tr>
 
 						<tr>
 							<th>Leveransbibliotek: </th>
-							<td>{{model.delivery_place}}</td>
+							<td>
+								{{#if isEditing}}
+									{{input classNames="form-control" type="text" value=model.deliveryPlace}}
+								{{else}}
+									{{model.deliveryPlace}}
+								{{/if}}
+							</td>
 						</tr>
-
 						<tr>
 							<th>ISSN / ISBN: </th>
-							<td>{{model.issn_isbn}}</td>
+							<td>
+								{{#if isEditing}}
+									{{input classNames="form-control" type="text" value=model.issnIsbn}}
+								{{else}}
+									{{model.issnIsbn}}
+								{{/if}}
+							</td>
 						</tr>
 						<tr>
 							<th>Ordertyp: </th>
-							<td>{{model.order_type}}</td>
+							<td>
+								{{#if isEditing}}
+									{{input classNames="form-control" type="text" value=model.orderType}}
+								{{else}}
+									{{model.orderType}}
+								{{/if}}
+							</td>
+
 						</tr>
 						<tr>
 							<th>Volym: </th>
-							<td>{{model.publication_year}}</td>
+							<td>
+								{{#if isEditing}}
+									{{input classNames="form-control" type="text" value=model.volume}}
+								{{else}}
+									{{model.volume}}
+								{{/if}}
+							</td>
+
+
 						</tr>
 						<tr>
 							<th>Publikations-år: </th>
-							<td>{{model.publication_year}}</td>
+							<td>								
+								{{#if isEditing}}
+									{{input classNames="form-control" type="text" value=model.publicationYear}}
+								{{else}}
+									{{model.publicationYear}}
+								{{/if}}
+							</td>
 						</tr>
 						<tr>
 							<th>Nummer (issue): </th>
-							<td>{{model.issue}}</td>
+							<td>
+								{{#if isEditing}}
+									{{input classNames="form-control" type="text" value=model.issue}}
+								{{else}}
+									{{model.issue}}
+								{{/if}}
+							</td>
+
 						</tr>
 						<tr>
 							<th>Sidor: </th>
-							<td>{{model.pages}}</td>
+							<td>
+								{{#if isEditing}}
+									{{input classNames="form-control" type="text" value=model.pages}}
+								{{else}}
+									{{model.pages}}
+								{{/if}}
+							</td>
+
 						</tr>
 						<tr>
 							<th>Journal titel: </th>
-							<td>{{model.journal_title}}</td>
+							<td>
+								{{#if isEditing}}
+									{{input classNames="form-control" type="text" value=model.journalTitle}}
+								{{else}}
+									{{model.journalTitle}}
+								{{/if}}
+							</td>
 						</tr>
 						<tr>
 							<th>Kopia (om lån ej möjligt): </th>
-							<td>{{model.photocopies_if_loan_not_possible}}</td>
+							<td>
+								{{#if isEditing}}
+									{{input classNames="form-control" type="text" value=model.photocopiesIfLoanNotPossible}}
+								{{else}}
+									{{model.photocopiesIfLoanNotPossible}}
+								{{/if}}
+							</td>
 						</tr>
 						<tr>
 							<th>Utanför skandinavien: </th>
-							<td>{{model.order_outside_scandinavia}}</td>
+							<td>
+								{{#if isEditing}}
+									{{input classNames="form-control" type="text" value=model.orderOutsideScandinavia}}
+								{{else}}
+									{{model.orderOutsideScandinavia}}
+								{{/if}}
+							</td>
 						</tr>
 						<tr>
 							<th>E-post konfirmation: </th>
-							<td>{{model.email_confirmation}}</td>
+							<td>
+								{{#if isEditing}}
+									{{input classNames="form-control" type="text" value=model.emailConfirmation}}
+								{{else}}
+									{{model.emailConfirmation}}
+								{{/if}}
+							</td>
 						</tr>
 						<tr>
 							<th>Bäst-före-datum: </th>
-							<td>{{model.not_valid_after}}</td>
+							<td>
+								{{#if isEditing}}
+									{{input classNames="form-control" type="text" value=model.notValidAfter}}
+								{{else}}
+									{{model.notValidAfter}}
+								{{/if}}
+							</td>
+				
 						</tr>
 						<tr>
 							<th>Prioritet: </th>
-							<td>{{model.delivery_type}}</td>
+							<td>
+								{{#if isEditing}}
+									{{input classNames="form-control" type="text" value=model.deliveryType}}
+								{{else}}
+									{{model.deliveryType}}
+								{{/if}}
+
+							</td>
 						</tr>
 					</table>
 			</div> <!-- end panel --> 
@@ -105,58 +194,72 @@
 					<tr>
 						<th>Namn: </th>
 						<td>{{model.name}}</td>
+						<td><button class="btn btn-sm btn-default">edit</button></td>
 					</tr>
 					<tr>
 						<th>company1: </th>
 						<td>{{model.company1}}</td>
+						<td><button class="btn btn-sm btn-default">edit</button></td>
 					</tr>
 					<tr>
 						<th>company2: </th>
 						<td>{{model.company2}}</td>
+						<td><button class="btn btn-sm btn-default">edit</button></td>
 					</tr>
 					<tr>
 						<th>company3: </th>
 						<td>{{model.company3}}</td>
+						<td><button class="btn btn-sm btn-default">edit</button></td>
 					</tr>
 					<tr>
 						<th>Telefon: </th>
 						<td>{{model.phone_number}}</td>
+						<td><button class="btn btn-sm btn-default">edit</button></td>
 					</tr>
 					<tr>
 						<th>E-post: </th>
 						<td>{{model.email_address}}</td>
+						<td><button class="btn btn-sm btn-default">edit</button></td>
 					</tr>
 					<tr>
 						<th>Lånekortsnummer: </th>
 						<td>{{model.library_card_number}}</td>
+						<td><button class="btn btn-sm btn-default">edit</button></td>
 					</tr>
 					<tr>
 						<th>Kundtyp: </th>
 						<td>{{model.customer_type}}</td>
+						<td><button class="btn btn-sm btn-default">edit</button></td>
 					</tr>
 					<tr>
 						<th>Kommentar: </th>
 						<td>{{model.comments}}</td>
+						<td><button class="btn btn-sm btn-default">edit</button></td>
 					</tr>
 					<tr>
 						<th>Formulärspråk: </th>
 						<td>{{model.form_lang}}</td>
+						<td><button class="btn btn-sm btn-default">edit</button></td>
 					</tr>
 					<tr>
 						<th>Fakturanamn: </th>
 						<td>{{model.invoicing_name}}</td>
+						<td><button class="btn btn-sm btn-default">edit</button></td>
 					</tr>
 					<tr>
 						<th>Fakturaaddress: </th>
 						<td>{{model.invoicing_address}}</td>
+						<td><button class="btn btn-sm btn-default">edit</button></td>
 					</tr>
 					<tr>
 						<th>invoicing_postal_address1: </th>
 						<td>{{model.invoicing_postal_address1}}</td>
+						<td><button class="btn btn-sm btn-default">edit</button></td>
 					</tr>
 					<tr>
 						<th>invoicing_postal_address1: </th>
 						<td>{{model.invoicing_postal_address2}}</td>
+						<td><button class="btn btn-sm btn-default">edit</button></td>
 					</tr>
 		
 				</table>

@@ -10,7 +10,7 @@ var App = Ember.Application.create({
 
 
 
-App.ApplicationAdapter = DS.RESTAdapter.extend({
+App.ApplicationAdapter = DS.ActiveModelAdapter.extend({
   host: 'http://130.241.16.49:3009'
 });
 
@@ -22,23 +22,25 @@ App.ApplicationAdapter = DS.RESTAdapter.extend({
 
 
 
-App.ApplicationRoute = Ember.Route.extend({
-	model: function() {
-		App.currentUser = "xanjoo";
-		App.defaultLocation = '3'
-		App.locations = this.store.find('location');
-	}
-});
+
 
 App.Router.map(function() {
   // put your routes here
    	this.resource("fjarrinposts", { path: "/fjarrinposts"}, function() {
 	
    	});
-   	this.route("fjarrinpost", { path: "/fjarrinpost/:order_id"});
+   	this.route("fjarrinpost", { path: "/fjarrinpost/:id"});
    	this.route("fjarrut");
 });
 
+
+App.ApplicationRoute = Ember.Route.extend({
+	model: function() {
+		App.currentUser = "xanjoo";
+		App.defaultLocation = '3'
+		App.locations = this.store.find('location');
+	}	
+});
 
 App.FjarrinpostsController = Ember.Controller.extend({
 
@@ -49,7 +51,7 @@ App.FjarrinpostsController = Ember.Controller.extend({
 	},
 	
 	filter1: {
-		active : true, 
+		active : false, 
 		name: "Lån",
 		id: 1
 	},
@@ -146,12 +148,41 @@ App.FjarrinpostsController = Ember.Controller.extend({
 });
 
 
-App.FjarrinpostRoute = Ember.Route.extend({
+App.FjarrinpostController = Ember.ObjectController.extend({
+	locations: {},
+	isEditing: false,
+	init: function() {
+		this.locations = App.locations;
+		this.set("isEditing", false);
+	},
 
-	model: function(param) {
- 		
-		return {"id":1, "owner": "xljoha", "order_type":'Lån',"title":"About annoying and dirty tiny micro thingy things in the air","publication_year":"1940","volume":"2","issue":"1","pages":"22-23","journal_title":"Journal for med-geeks","issn_isbn":"1234-1234","reference_information":"","photocopies_if_loan_not_possible":true,"order_outside_scandinavia":true,"email_confirmation":true,"not_valid_after":"2014-05-20","delivery_type":'Snabb',"name":"Doktor Bill","company1":"Atma och allergienheten","company2":"Östra Sjukhuset","company3":"","phone_number":"","email_address":"bill@example.com","library_card_number":"5001242102","customer_type":"sahl","comments":"","form_lang":"sv","authors":"","order_id":"20140520-151559.1","form_library":"Gm","delivery_place":"Hämtas: Gm","invoicing_name":"","invoicing_address":"","invoicing_postal_address1":"","invoicing_postal_address2":"","order_path":"SFX","created_at":"2014-05-26T10:56:25.207Z","updated_at":"2014-05-26T10:56:25.207Z","user_id":null};
+	locationChanged: function() {
+		this.get("model").save();
+	}.observes('model.locationId'),
+
+	actions: {
+		enterEditMode: function() {
+			this.set("isEditing", true);
+		},
+		saveOrder: function() {
+			this.get("model").save(); /// check promise from server... then continue.. 
+			this.set("isEditing", false);
+		},
+		resetOrder: function() {
+			this.get("model").rollback();
+			this.set("isEditing", false);
+		}
 	}
+
+
+});
+
+
+App.FjarrinpostRoute = Ember.Route.extend({
+	model: function(param) {
+		return this.store.find("order", param.id);
+	}
+
 });
 
 App.IndexRoute = Ember.Route.extend({

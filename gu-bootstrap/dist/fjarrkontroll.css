@@ -5811,11 +5811,20 @@ header #logo {
   min-width: 100px;
 }
 #toolbar select {
-  width: 120px;
+  width: 300px;
   display: inline-block;
+}
+#single-order-toolbar button {
+  margin-left: 10px;
 }
 #feedback {
   background-color: #eeeeee;
+}
+.table td {
+  vertical-align: middle;
+}
+.table th {
+  vertical-align: middle;
 }
 #order-list {
   margin-top: 20px;
