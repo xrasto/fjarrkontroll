@@ -1,13 +1,24 @@
 /* make scrollbar always visible */ 
 html {overflow-y: scroll;}
 
+.service-name {
+	font-size: 16px;
+	height: 32px;
+	float: left;
+	border-left: 1px solid black;
+	padding-top: 5px;
+	margin-top: 13px;
+	padding-left: 20px;
+	color: #000;
+}
+
 
 header {
 	position: relative;
 	height: 60px;
 	background-color: @gray-lighter;
 	h2 {
-		margin-top: 12px;
+		margin-top: 30px;
 		span {
 			font-weight: bold;
 		}
@@ -17,15 +28,10 @@ header {
 		margin-top: 15px;
 	}
 
-	#logo {
-		z-index: 1;
-		background-color: @gray-dark;
-		width:90px;
-		height: 90px;
-		padding-top: 10px;
-		position: absolute;
-		top:0;
-		right:40px;
+	#logo {		
+		padding-top: 15px;
+		width: 275px;
+		float:left;
 	}
 }
 
@@ -35,16 +41,18 @@ header {
 }
 
 #toolbar {
-	border:1px solid #ccc;
-	padding:10px;
+	display: none;
+	margin-top: 20px;
+	padding:5px;
+	background-color: @gray-lighter;
+
 	button {
 		&.fixed {
-			min-width: 100px;
+			width: 100%;
 		}
 	}
-	select {
-		width: 300px;
-		display: inline-block;
+	.btn-group-vertical {
+		width: 100%;	
 	}
 }
 
@@ -76,12 +84,23 @@ header {
 		}
 	}
 
+	.nav li a {
+		padding-top:5px;
+		padding-bottom: 5px;
+	}
+	.nav li {
+		&.active {
+			background-color: @gray-lighter;
+		}
+	}
+
 }
 
 
 
 
 footer {
+	margin-top: 40px;
 	#footer {
 		border-top: 1px solid @gray-lighter;
 		padding:20px;

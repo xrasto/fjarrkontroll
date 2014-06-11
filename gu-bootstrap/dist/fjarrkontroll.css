@@ -5702,6 +5702,10 @@ button.close {
   width: 180px;
   height: 140px;
 }
+.logo.text-below.medium {
+  width: 81px;
+  height: 63px;
+}
 .logo.text-below.small {
   width: 45px;
   height: 30px;
@@ -5717,6 +5721,10 @@ button.close {
 .logo.text-to-right.small {
   width: 100px;
   height: 16px;
+}
+.logo.ub.text-to-right {
+  width: 250px;
+  height: 32px;
 }
 .logo.eng.dark.text-below {
   background: url("../logotypes/svg/gu_text_below_en_black.svg");
@@ -5748,6 +5756,11 @@ button.close {
   background-size: 100%;
   background-repeat: no-repeat;
 }
+.logo.ub.swe.dark.text-to-right {
+  background: url("../logotypes/svg/gu_ub_text_to_right_sv_black.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
 .logo.swe.light.text-to-right {
   background: url("../../../logotypes/svg/gu_text_to_right_sv_white.svg");
   background-size: 100%;
@@ -5775,13 +5788,23 @@ blockquote:not(.pull-right):before {
 html {
   overflow-y: scroll;
 }
+.service-name {
+  font-size: 16px;
+  height: 32px;
+  float: left;
+  border-left: 1px solid black;
+  padding-top: 5px;
+  margin-top: 13px;
+  padding-left: 20px;
+  color: #000;
+}
 header {
   position: relative;
   height: 60px;
   background-color: #eeeeee;
 }
 header h2 {
-  margin-top: 12px;
+  margin-top: 30px;
 }
 header h2 span {
   font-weight: bold;
@@ -5790,29 +5813,25 @@ header #admin-menu {
   margin-top: 15px;
 }
 header #logo {
-  z-index: 1;
-  background-color: #333333;
-  width: 90px;
-  height: 90px;
-  padding-top: 10px;
-  position: absolute;
-  top: 0;
-  right: 40px;
+  padding-top: 15px;
+  width: 275px;
+  float: left;
 }
 .media .media-object {
   width: 64px;
   height: 64px;
 }
 #toolbar {
-  border: 1px solid #ccc;
-  padding: 10px;
+  display: none;
+  margin-top: 20px;
+  padding: 5px;
+  background-color: #eeeeee;
 }
 #toolbar button.fixed {
-  min-width: 100px;
+  width: 100%;
 }
-#toolbar select {
-  width: 300px;
-  display: inline-block;
+#toolbar .btn-group-vertical {
+  width: 100%;
 }
 #single-order-toolbar button {
   margin-left: 10px;
@@ -5832,6 +5851,16 @@ header #logo {
 #order-list table td {
   white-space: nowrap;
   vertical-align: middle;
+}
+#order-list .nav li a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#order-list .nav li.active {
+  background-color: #eeeeee;
+}
+footer {
+  margin-top: 40px;
 }
 footer #footer {
   border-top: 1px solid #eeeeee;

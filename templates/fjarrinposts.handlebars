@@ -1,12 +1,26 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">	
-			{{view App.ToolbarView}}
+
 		</div>
 	</div>
 	<div id="order-list" class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-2">
 
+			<ul class="nav">
+				<li class="active"><a href="#">Alla ordrar <span class="badge">102</span></a></li>
+				<li><a href="#">Mina ordrar <span class="badge">3</span></a></li>
+				<li><a href="#">Arkiv <span class="badge">3877</span></a></li>
+			</ul>
+
+			{{view App.ToolbarView}}
+		<!--
+			<button {{action 'toggleMyOrders'}} {{bind-attr class=":fixed :btn :btn-md filter4.active:btn-primary:btn-default"}} >Alla <i {{bind-attr class=":fa :fa-check filter4.active:visible:hidden"}}></i></button>
+		 	<button {{action 'toggleMyOrders'}} {{bind-attr class=":fixed :btn :btn-md filter4.active:btn-primary:btn-default"}} >Mina  <i {{bind-attr class=":fa :fa-check filter4.active:visible:hidden"}}></i></button>	-->
+		</div>
+
+		<div class="col-xs-10">
+			
 		    <table class="table table-striped table-condensed">
 		    	<tr>
 			    	<th>Ordernummer</th>
