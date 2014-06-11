@@ -37,12 +37,13 @@ App.Router.map(function() {
 App.ApplicationRoute = Ember.Route.extend({
 	model: function() {
 		App.currentUser = "xanjoo";
-		App.defaultLocation = '3'
+		App.defaultLocation = '7'
 		App.locations = this.store.find('location');
 	}	
 });
 
 App.FjarrinpostsController = Ember.Controller.extend({
+
 
 	filter : {
 		currentLocation: App.defaultLocation,
@@ -50,6 +51,9 @@ App.FjarrinpostsController = Ember.Controller.extend({
 		user: null
 	},
 	
+
+	folder : [],
+
 	filter1: {
 		active : false, 
 		name: "Lån",
@@ -68,19 +72,23 @@ App.FjarrinpostsController = Ember.Controller.extend({
 		id:2
 	},
 
-	//copy: false, //2
-	filter4: {
-		active: false,
-		user: null,
-		name: "Mina ordrar"
-	},
+
 
 	init: function() {
-		this.set("filter4.user", App.currentUser);
+
+		/*this.folder.add({id: 1, name: 'Alla ordrar' , active: true});
+		this.folder.add({id: 2, name: 'Mina ordrar', active: false});
+		this.folder.add({id: 3,name: 'Arkiv', active:false});*/
+
+		this.folder.pushObject(Ember.Object.create({id: 1, name: 'Alla ordrar' , active: true, user: null}));
+		this.folder.pushObject(Ember.Object.create({id: 2, name: 'Mina ordrar', active: false, user: App.currentUser}));
 		this.set("filter.currentLocation", App.defaultLocation);
 		this.set("filter2.currentLocation.id", App.defaultLocation);
 		this.set("filter2.locations", App.locations);
 	},
+
+
+
 
 	triggerFilter : function() {
 		this.filter.mediaType = [];
@@ -103,17 +111,9 @@ App.FjarrinpostsController = Ember.Controller.extend({
 			this.set("filter.currentLocation",this.filter2.currentLocation.id);	
 		}
 
-		if (this.get("filter4.active")) {
-			this.set("filter.user", this.get("filter4.user"));
-		}
-		else {
-			this.set("filter.user", null);
-		}
-
-
 		this.transitionToRoute("index");
 		console.log("currentLocation: " + this.filter.currentLocation + " mediatypes: " + this.filter.mediaType + " user: " + this.filter.user)
-	}.observes('filter1.active', 'filter2.currentLocation.id', 'filter3.active', 'filter4.active'),
+	}.observes('folder.@each.active','filter1.active', 'filter2.currentLocation.id', 'filter3.active'),
 	
 
 	actions: {
@@ -135,14 +135,21 @@ App.FjarrinpostsController = Ember.Controller.extend({
 			}
 		},
 
-		toggleMyOrders: function() {
-			if (this.get("filter4.active") === true) {
-				this.set("filter4.active", false);
-			} 
-			else {
-				this.set("filter4.active", true);
-			}
-		}
+		setFolder: function(id) {
+			this.folder.forEach(function(item, index) {
+				item.set("active",false)
+			});
+
+			var clickedFolder = this.folder.find(function(item, index) {
+				if (item.id === id) {
+					return item;
+				}
+			});
+			this.filter.user = clickedFolder.get("user");
+			clickedFolder.set("active", true);
+
+
+		},
 
 	}
 });

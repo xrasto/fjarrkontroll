@@ -1,13 +1,23 @@
-<div id="toolbar">	
-	<h5>Enhet</h5>
-	{{view Ember.Select classNames="form-control" content=filter2.locations optionValuePath="content.id" optionLabelPath="content.nameSv" value=filter2.currentLocation.id}}
+<div id="toolbar">
+	<div class="row">
+			<div class="col-xs-4">	
+				{{view Ember.Select classNames="form-control" content=filter2.locations optionValuePath="content.id" optionLabelPath="content.nameSv" value=filter2.currentLocation.id}}
+			</div>
+			<div class="col-xs-4">
+				<select class="form-control">
+					<option>Inkommen</option>
+				</select>
 
-	<h5>Status</h5>
-	{{view Ember.Select classNames="form-control" content=filter2.locations optionValuePath="content.id" optionLabelPath="content.nameSv" value=filter2.currentLocation.id}}
-
-	<h5>Typ</h5>
-	<div class="btn-group-vertical">
-		<button {{action 'toggleLoan'}} {{bind-attr class=":fixed :btn :btn-md filter1.active:btn-primary:btn-default"}}>{{filter1.name}} <i  {{bind-attr class=":fa :fa-check filter1.active:visible:hidden"}}></i></button>	
-		<button {{action 'toggleCopy'}} {{bind-attr class=":fixed :btn :btn-md filter3.active:btn-primary:btn-default"}}>{{filter3.name}} <i {{bind-attr class=":fa :fa-check filter3.active:visible:hidden"}}></i></button>	
+			</div>
+			<div class="col-xs-4">
+				<ul class="nav">
+					<li>
+						<a href="#" {{action 'toggleLoan'}} {{bind-attr class="filter1.active:active"}}>{{filter1.name}} <i  {{bind-attr class=":fa :fa-check filter1.active:visible:hidden"}}></i></a>	
+					</li>
+					<li>
+						<a href="#" {{action 'toggleCopy'}} {{bind-attr class="filter3.active:active"}}>{{filter3.name}} <i {{bind-attr class=":fa :fa-check filter3.active:visible:hidden"}}></i></a>
+					</li>
+				</ul>
+			</div>
 	</div>
 </div>

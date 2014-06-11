@@ -527,35 +527,48 @@ function program67(depth0,data) {
 Ember.TEMPLATES["fjarrinposts"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, self=this, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  var buffer = '', stack1, escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
   
-  var buffer = '', stack1, helper, options;
-  data.buffer.push("\n					<tr>\n		    			<td>");
-  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "fjarrinpost", "item.id", options) : helperMissing.call(depth0, "link-to", "fjarrinpost", "item.id", options));
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push(" </td>\n		    			<td>");
+  var buffer = '', stack1;
+  data.buffer.push("\n				<li ");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'class': ("item.active:active")
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push("><a ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "setFolder", "item.id", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["ID","ID"],data:data})));
+  data.buffer.push(" href=\"#\">");
   stack1 = helpers._triageMustache.call(depth0, "item.name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n		    			<td>");
-  stack1 = helpers._triageMustache.call(depth0, "item.orderType", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n		    			<td>");
-  data.buffer.push(escapeExpression((helper = helpers.trimString || (depth0 && depth0.trimString),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "item.title", options) : helperMissing.call(depth0, "trimString", "item.title", options))));
-  data.buffer.push("</td>\n		    			<td>");
-  stack1 = helpers._triageMustache.call(depth0, "item.deliveryPlace", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n		    			<td>");
-  stack1 = helpers._triageMustache.call(depth0, "item.formLibrary", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n						<td>Inkommen</td>\n						<td>\n							");
-  stack1 = helpers['if'].call(depth0, "item.owner", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(6, program6, data),fn:self.program(4, program4, data),contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n						</td>\n		    		</tr>\n		    	");
+  data.buffer.push("</a></li>\n			");
   return buffer;
   }
-function program2(depth0,data) {
+
+function program3(depth0,data) {
+  
+  var buffer = '', stack1, helper, options;
+  data.buffer.push("\n							<tr>\n				    			<td>");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "fjarrinpost", "item.id", options) : helperMissing.call(depth0, "link-to", "fjarrinpost", "item.id", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(" </td>\n				    			<td>");
+  stack1 = helpers._triageMustache.call(depth0, "item.name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n				    			<td>");
+  stack1 = helpers._triageMustache.call(depth0, "item.orderType", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n				    			<td>");
+  data.buffer.push(escapeExpression((helper = helpers.trimString || (depth0 && depth0.trimString),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "item.title", options) : helperMissing.call(depth0, "trimString", "item.title", options))));
+  data.buffer.push("</td>\n				    			<td>");
+  stack1 = helpers._triageMustache.call(depth0, "item.formLibrary", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n								<td>Inkommen</td>\n								<td>\n									");
+  stack1 = helpers['if'].call(depth0, "item.userId", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(8, program8, data),fn:self.program(6, program6, data),contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n								</td>\n				    		</tr>\n				    	");
+  return buffer;
+  }
+function program4(depth0,data) {
   
   var stack1;
   stack1 = helpers._triageMustache.call(depth0, "item.orderId", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
@@ -563,28 +576,33 @@ function program2(depth0,data) {
   else { data.buffer.push(''); }
   }
 
-function program4(depth0,data) {
+function program6(depth0,data) {
   
   var buffer = '', stack1;
-  data.buffer.push("\n								<div class=\"btn-group\">\n								  <button type=\"button\" class=\"btn btn-default btn-xs dropdown-toggle\" data-toggle=\"dropdown\">\n								    <i class=\"fa fa-male\"></i> ");
-  stack1 = helpers._triageMustache.call(depth0, "item.owner", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("\n										<div class=\"btn-group\">\n										  <button type=\"button\" class=\"btn btn-default btn-xs dropdown-toggle\" data-toggle=\"dropdown\">\n										    <i class=\"fa fa-male\"></i> ");
+  stack1 = helpers._triageMustache.call(depth0, "item.userId", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push(" <span class=\"caret\"></span>\n								  </button>\n								  <ul class=\"dropdown-menu\" role=\"menu\">\n								    <li><a href=\"#\"><i class=\"fa fa-male\"></i> ");
-  stack1 = helpers._triageMustache.call(depth0, "item.owner", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push(" <span class=\"caret\"></span>\n										  </button>\n										  <ul class=\"dropdown-menu\" role=\"menu\">\n										    <li><a href=\"#\"><i class=\"fa fa-male\"></i> ");
+  stack1 = helpers._triageMustache.call(depth0, "App.currentUser", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</a></li>\n								    <li><a href=\"#\">Släpp order</a></li>	\n								  </ul>\n								</div>\n							");
+  data.buffer.push("</a></li>\n										    <li><a href=\"#\">Släpp order</a></li>	\n										  </ul>\n										</div>\n									");
   return buffer;
   }
 
-function program6(depth0,data) {
+function program8(depth0,data) {
   
-  
-  data.buffer.push("\n								<a class=\"btn btn-xs btn-default\" href=\"#\">ta order</a> \n							");
+  var buffer = '', stack1;
+  data.buffer.push("\n										<div class=\"btn-group\">\n										  <button type=\"button\" class=\"btn btn-default btn-xs dropdown-toggle\" data-toggle=\"dropdown\">\n										    <i class=\"fa fa-question-circle\"></i> Ingen <span class=\"caret\"></span>\n										  </button>\n										  <ul class=\"dropdown-menu\" role=\"menu\">\n										    <li><a href=\"#\"><i class=\"fa fa-male\"></i> ");
+  stack1 = helpers._triageMustache.call(depth0, "App.currentUser", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</a></li>\n										    <li><a href=\"#\">Släpp order</a></li>	\n										  </ul>\n										</div>\n									");
+  return buffer;
   }
 
-  data.buffer.push("<div class=\"container\">\n	<div class=\"row\">\n		<div class=\"col-xs-12\">	\n\n		</div>\n	</div>\n	<div id=\"order-list\" class=\"row\">\n		<div class=\"col-xs-2\">\n\n			<ul class=\"nav\">\n				<li class=\"active\"><a href=\"#\">Alla ordrar <span class=\"badge\">102</span></a></li>\n				<li><a href=\"#\">Mina ordrar <span class=\"badge\">3</span></a></li>\n				<li><a href=\"#\">Arkiv <span class=\"badge\">3877</span></a></li>\n			</ul>\n\n			");
-  data.buffer.push(escapeExpression(helpers.view.call(depth0, "App.ToolbarView", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
-  data.buffer.push("\n		<!--\n			<button ");
+  data.buffer.push("<div class=\"container\">\n	<div class=\"row\">\n		<div class=\"col-xs-12\">	\n\n		</div>\n	</div>\n	<div id=\"order-list\" class=\"row\">\n		<div class=\"col-xs-2\">\n\n			<ul class=\"nav\">\n			");
+  stack1 = helpers.each.call(depth0, "item", "in", "folder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n			<!--\n				<li class=\"active\"><a href=\"#\">Alla ordrar <span class=\"badge\">102</span></a></li>\n				<li><a href=\"#\">Mina ordrar <span class=\"badge\">3</span></a></li>\n				<li><a href=\"#\">Arkiv <span class=\"badge\">3877</span></a></li>-->\n			</ul>\n\n			\n		<!--\n			<button ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "toggleMyOrders", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
   data.buffer.push(" ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
@@ -604,10 +622,12 @@ function program6(depth0,data) {
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'class': (":fa :fa-check filter4.active:visible:hidden")
   },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
-  data.buffer.push("></i></button>	-->\n		</div>\n\n		<div class=\"col-xs-10\">\n			\n		    <table class=\"table table-striped table-condensed\">\n		    	<tr>\n			    	<th>Ordernummer</th>\n			    	<th>Låntagare</th>\n			    	<th>Typ</th>\n			    	<th>Titel</th>\n			    	<th>Leveransbibliotek</th>\n			    	<th>Bibliotek</th>\n			    	<th>Status</th>\n			    	<th></th>\n		    	</tr>\n		    	");
-  stack1 = helpers.each.call(depth0, "item", "in", "model", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  data.buffer.push("></i></button>	-->\n		</div>\n\n		<div class=\"col-xs-10\">\n			<div class=\"row\">\n				<div class=\"col-xs-12\">\n					");
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "App.ToolbarView", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push("\n				</div>\n			</div>\n			<div class=\"row\">\n				<div class=\"col-xs-12\">\n			    	<table class=\"table table-striped table-condensed\">\n				    	<tr>\n					    	<th>Ordernummer</th>\n					    	<th>Låntagare</th>\n					    	<th>Typ</th>\n					    	<th>Titel</th>\n					    	<th>Bibliotek</th>\n					    	<th>Status</th>\n					    	<th></th>\n				    	</tr>\n				    	");
+  stack1 = helpers.each.call(depth0, "item", "in", "model", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n		    </table>\n	    </div>\n	</div>\n </div><!-- end container -->");
+  data.buffer.push("\n			    	</table>\n		    	</div>\n		    </div>\n	    </div>\n	</div>\n </div><!-- end container -->");
   return buffer;
   
 });
@@ -668,7 +688,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, escapeExpression=this.escapeExpression;
 
 
-  data.buffer.push("<div id=\"toolbar\">	\n	<h5>Enhet</h5>\n	");
+  data.buffer.push("<div id=\"toolbar\">\n	<div class=\"row\">\n			<div class=\"col-xs-4\">	\n				");
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.Select", {hash:{
     'classNames': ("form-control"),
     'content': ("filter2.locations"),
@@ -676,19 +696,11 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
     'optionLabelPath': ("content.nameSv"),
     'value': ("filter2.currentLocation.id")
   },hashTypes:{'classNames': "STRING",'content': "ID",'optionValuePath': "STRING",'optionLabelPath': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'content': depth0,'optionValuePath': depth0,'optionLabelPath': depth0,'value': depth0},contexts:[depth0],types:["ID"],data:data})));
-  data.buffer.push("\n\n	<h5>Status</h5>\n	");
-  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.Select", {hash:{
-    'classNames': ("form-control"),
-    'content': ("filter2.locations"),
-    'optionValuePath': ("content.id"),
-    'optionLabelPath': ("content.nameSv"),
-    'value': ("filter2.currentLocation.id")
-  },hashTypes:{'classNames': "STRING",'content': "ID",'optionValuePath': "STRING",'optionLabelPath': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'content': depth0,'optionValuePath': depth0,'optionLabelPath': depth0,'value': depth0},contexts:[depth0],types:["ID"],data:data})));
-  data.buffer.push("\n\n	<h5>Typ</h5>\n	<div class=\"btn-group-vertical\">\n		<button ");
+  data.buffer.push("\n			</div>\n			<div class=\"col-xs-4\">\n				<select class=\"form-control\">\n					<option>Inkommen</option>\n				</select>\n\n			</div>\n			<div class=\"col-xs-4\">\n				<ul class=\"nav\">\n					<li>\n						<a href=\"#\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "toggleLoan", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
   data.buffer.push(" ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
-    'class': (":fixed :btn :btn-md filter1.active:btn-primary:btn-default")
+    'class': ("filter1.active:active")
   },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
   data.buffer.push(">");
   stack1 = helpers._triageMustache.call(depth0, "filter1.name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
@@ -697,11 +709,11 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'class': (":fa :fa-check filter1.active:visible:hidden")
   },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
-  data.buffer.push("></i></button>	\n		<button ");
+  data.buffer.push("></i></a>	\n					</li>\n					<li>\n						<a href=\"#\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "toggleCopy", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
   data.buffer.push(" ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
-    'class': (":fixed :btn :btn-md filter3.active:btn-primary:btn-default")
+    'class': ("filter3.active:active")
   },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
   data.buffer.push(">");
   stack1 = helpers._triageMustache.call(depth0, "filter3.name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
@@ -710,7 +722,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'class': (":fa :fa-check filter3.active:visible:hidden")
   },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
-  data.buffer.push("></i></button>	\n	</div>\n</div>");
+  data.buffer.push("></i></a>\n					</li>\n				</ul>\n			</div>\n	</div>\n</div>");
   return buffer;
   
 });

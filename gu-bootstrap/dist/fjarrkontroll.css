@@ -5822,16 +5822,13 @@ header #logo {
   height: 64px;
 }
 #toolbar {
-  display: none;
-  margin-top: 20px;
-  padding: 5px;
+  padding: 10px;
+  border-radius: 2px;
+  margin-bottom: 10px;
   background-color: #eeeeee;
 }
-#toolbar button.fixed {
-  width: 100%;
-}
-#toolbar .btn-group-vertical {
-  width: 100%;
+#toolbar .nav li {
+  display: inline-block;
 }
 #single-order-toolbar button {
   margin-left: 10px;
