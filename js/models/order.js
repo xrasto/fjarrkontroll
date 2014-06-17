@@ -8,17 +8,17 @@ App.Order = DS.Model.extend({
 	journalTitle 						: 		DS.attr('string'),
 	issnIsbn 							: 		DS.attr('string'),
 	referenceInformation 				: 		DS.attr('string'),
-	photocopiesIfLoanNotPossible 	: 		DS.attr('boolean'),
+	photocopiesIfLoanNotPossible 		: 		DS.attr('boolean'),
 	orderOutsideScandinavia 			: 		DS.attr('boolean'),
 	emailConfirmation 					: 		DS.attr('boolean'),
-	notValidAfter 					: 		DS.attr('string'),
+	notValidAfter 						: 		DS.attr('string'),
 	deliveryType 						: 		DS.attr('string'),
 	name 								: 		DS.attr("string"), 
 	company1 							: 		DS.attr('string'),
 	company2 							: 		DS.attr('string'),
 	company3 							: 		DS.attr('string'),
 	emailAddress 						: 		DS.attr('string'),
-	libraryCardNumber 				: 		DS.attr('string'),
+	libraryCardNumber 					: 		DS.attr('string'),
 	customerType 						: 		DS.attr('string'),
 	comments 							: 		DS.attr('string'),
 	formLang 							: 		DS.attr('string'),
@@ -33,7 +33,8 @@ App.Order = DS.Model.extend({
 	createdAt 							: 		DS.attr('string'),
 	updatedAt 							: 		DS.attr('string'),
 	locationId							: 		DS.attr('string'),
-	userId 							: 		DS.attr('string')
+	userId 								: 		DS.attr('string'),
+	statusId							: 		DS.attr('string')
 });		
 
 

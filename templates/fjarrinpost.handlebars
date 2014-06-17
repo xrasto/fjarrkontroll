@@ -1,9 +1,42 @@
 <div class="container">
+	<div class="row" id="global-settings-order">
+		<div class="col-xs-12">
+			<!--{{#link-to 'fjarrinposts' class="btn btn-default"}}<i class="fa fa-chevron-left"></i> Tillbaka{{/link-to}} -->
+			<div class="row">
+				<div class="col-xs-6">
+					<h2>{{model.orderId}}</h2> 
+				</div>
+				<div class="col-xs-6" id="global-settings-order-actions">
+					{{#if isEditingGlobalOrder}}
+						<a href="#" class="pull-right" {{action 'saveGlobalOrderMetaData'}}> <i class="fa fa-floppy-o"></i> </a>
+						<a href="#" class="pull-right" {{action 'resetGlobalMetaData'}}> <i class="fa fa-trash-o"></i> </a>
+					{{else}}
+						<a href="#" class="pull-right" {{action 'enterGlobalEditMode'}}> <i class="fa fa-pencil"></i> </a>
+					{{/if}}
+				</div>
+			</div> 
+			<form class="form-inline">
+				<h4>Handläggande enhet:</h4>
+				{{#if isEditingGlobalOrder}}
+					{{view Ember.Select classNames="form-control" content=App.locations optionValuePath="content.id" optionLabelPath="content.nameSv" value=model.locationId}}
+				{{else}}
+					{{getLocationName model.locationId}}
+				{{/if}}
+
+				<h4>Status: </h4> 
+				{{#if isEditingGlobalOrder}}
+					 {{view Ember.Select classNames="form-control" content=App.statuses optionValuePath="content.id" optionLabelPath="content.nameSv" value=model.statusId}}
+				{{else}}
+					{{getStatusName model.statusId}}
+				{{/if}}
+			</form>
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-xs-4">
 			<div class="panel panel-primary">
-				<div class="panel-heading">Kund</div>
-				<table class="table table-striped table-bordered table-condensed">
+				<div class="panel-heading">Låntagare</div>
+				<table class="table table-bordered table-condensed">
 					<tr>
 						<th>Namn: </th>
 						<td>{{model.name}}</td>
@@ -79,32 +112,22 @@
 		<div class="col-xs-4">
 			<div class="panel panel-primary">
 			  <div class="panel-heading">
-			  Order - {{model.orderId}} 
+			  	Orderkort 
+				<form class="pull-right" id="single-order-toolbar">
+					{{#if isEditingOrder}}
+						<a {{action 'saveOrder'}} {{bind-attr class=":pull-right"}}><i class="fa fa-floppy-o"></i></a>
+						<a {{action 'resetOrder'}} {{bind-attr class=":pull-right"}}><i class="fa fa-trash-o"></i> </a>
+					{{else}}
+						<a {{action 'enterEditMode'}} class="pull-right"><i class="fa fa-pencil"></i> </a>
+					{{/if}}
+				</form>
 			 </div>
 
-					<table class="table table-striped table-bordered table-condensed">
-						<tr>
-							<td colspan="3">
-								<form class="form-inline" id="single-order-toolbar">
-									
-									{{#if isEditing}}
-										{{view Ember.Select classNames="form-control" content=locations optionValuePath="content.id" optionLabelPath="content.label" value=model.locationId}}
-									{{else}}
-										<button class="disabled btn btn-default">Handläggande enhet: <strong>{{model.locationId}}</strong></button>
-									{{/if}}
-									{{#if isEditing}}
-										<button {{action 'saveOrder'}} {{bind-attr class=":pull-right :btn :btn-danger :btn-md"}}><i class="fa fa-floppy-o"></i> Spara</button>
-										<button {{action 'resetOrder'}} {{bind-attr class=":pull-right :btn :btn-default :btn-md"}}><i class="fa fa-trash-o"></i> Stäng</button>
-									{{else}}
-										<button {{action 'enterEditMode'}} class="pull-right btn btn-default btn-md"><i class="fa fa-pencil-square-o"></i> Edit</button>
-									{{/if}}
-								</form>
-							</td>
-						</tr>
+					<table class="table table-bordered table-condensed">
 						<tr>
 							<th>Titel: </th>
 							<td>
-								{{#if isEditing}}
+								{{#if isEditingOrder}}
 									{{input classNames="form-control" type="text" value=model.title}}
 								{{else}}
 									{{model.title}}
@@ -115,7 +138,7 @@
 						<tr>
 							<th>Författare: </th>
 							<td>
-								{{#if isEditing}}
+								{{#if isEditingOrder}}
 									{{input classNames="form-control" type="text" value=model.author}}
 								{{else}}
 									{{model.author}}
@@ -126,7 +149,7 @@
 						<tr>
 							<th>Leveransbibliotek: </th>
 							<td>
-								{{#if isEditing}}
+								{{#if isEditingOrder}}
 									{{input classNames="form-control" type="text" value=model.deliveryPlace}}
 								{{else}}
 									{{model.deliveryPlace}}
@@ -136,7 +159,7 @@
 						<tr>
 							<th>ISSN / ISBN: </th>
 							<td>
-								{{#if isEditing}}
+								{{#if isEditingOrder}}
 									{{input classNames="form-control" type="text" value=model.issnIsbn}}
 								{{else}}
 									{{model.issnIsbn}}
@@ -146,7 +169,7 @@
 						<tr>
 							<th>Ordertyp: </th>
 							<td>
-								{{#if isEditing}}
+								{{#if isEditingOrder}}
 									{{input classNames="form-control" type="text" value=model.orderType}}
 								{{else}}
 									{{model.orderType}}
@@ -157,7 +180,7 @@
 						<tr>
 							<th>Volym: </th>
 							<td>
-								{{#if isEditing}}
+								{{#if isEditingOrder}}
 									{{input classNames="form-control" type="text" value=model.volume}}
 								{{else}}
 									{{model.volume}}
@@ -169,7 +192,7 @@
 						<tr>
 							<th>Publikations-år: </th>
 							<td>								
-								{{#if isEditing}}
+								{{#if isEditingOrder}}
 									{{input classNames="form-control" type="text" value=model.publicationYear}}
 								{{else}}
 									{{model.publicationYear}}
@@ -179,7 +202,7 @@
 						<tr>
 							<th>Nummer (issue): </th>
 							<td>
-								{{#if isEditing}}
+								{{#if isEditingOrder}}
 									{{input classNames="form-control" type="text" value=model.issue}}
 								{{else}}
 									{{model.issue}}
@@ -190,7 +213,7 @@
 						<tr>
 							<th>Sidor: </th>
 							<td>
-								{{#if isEditing}}
+								{{#if isEditingOrder}}
 									{{input classNames="form-control" type="text" value=model.pages}}
 								{{else}}
 									{{model.pages}}
@@ -201,7 +224,7 @@
 						<tr>
 							<th>Journal titel: </th>
 							<td>
-								{{#if isEditing}}
+								{{#if isEditingOrder}}
 									{{input classNames="form-control" type="text" value=model.journalTitle}}
 								{{else}}
 									{{model.journalTitle}}
@@ -211,7 +234,7 @@
 						<tr>
 							<th>Kopia (om lån ej möjligt): </th>
 							<td>
-								{{#if isEditing}}
+								{{#if isEditingOrder}}
 									{{input classNames="form-control" type="text" value=model.photocopiesIfLoanNotPossible}}
 								{{else}}
 									{{model.photocopiesIfLoanNotPossible}}
@@ -221,7 +244,7 @@
 						<tr>
 							<th>Utanför skandinavien: </th>
 							<td>
-								{{#if isEditing}}
+								{{#if isEditingOrder}}
 									{{input classNames="form-control" type="text" value=model.orderOutsideScandinavia}}
 								{{else}}
 									{{model.orderOutsideScandinavia}}
@@ -231,7 +254,7 @@
 						<tr>
 							<th>E-post konfirmation: </th>
 							<td>
-								{{#if isEditing}}
+								{{#if isEditingOrder}}
 									{{input classNames="form-control" type="text" value=model.emailConfirmation}}
 								{{else}}
 									{{model.emailConfirmation}}
@@ -241,7 +264,7 @@
 						<tr>
 							<th>Bäst-före-datum: </th>
 							<td>
-								{{#if isEditing}}
+								{{#if isEditingOrder}}
 									{{input classNames="form-control" type="text" value=model.notValidAfter}}
 								{{else}}
 									{{model.notValidAfter}}
@@ -252,7 +275,7 @@
 						<tr>
 							<th>Prioritet: </th>
 							<td>
-								{{#if isEditing}}
+								{{#if isEditingOrder}}
 									{{input classNames="form-control" type="text" value=model.deliveryType}}
 								{{else}}
 									{{model.deliveryType}}

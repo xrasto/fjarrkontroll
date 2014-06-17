@@ -4,10 +4,7 @@
 				{{view Ember.Select classNames="form-control" content=filter2.locations optionValuePath="content.id" optionLabelPath="content.nameSv" value=filter2.currentLocation.id}}
 			</div>
 			<div class="col-xs-4">
-				<select class="form-control">
-					<option>Inkommen</option>
-				</select>
-
+				{{view Ember.Select classNames="form-control" content=filter4.statuses optionValuePath="content.id" optionLabelPath="content.nameSv" value=filter4.currentStatus.id}}
 			</div>
 			<div class="col-xs-4">
 				<ul class="nav">

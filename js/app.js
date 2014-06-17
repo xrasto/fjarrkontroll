@@ -5,22 +5,9 @@ var App = Ember.Application.create({
 });
 
 
-
-
-
-
-
 App.ApplicationAdapter = DS.ActiveModelAdapter.extend({
   host: 'http://130.241.16.49:3009'
 });
-
-/*App.ApplicationAdapter = DS.FixtureAdapter.extend();*/
-
-/*App.ApplicationAdapter = DS.LSAdapter.extend({
-});*/
-
-
-
 
 
 
@@ -36,21 +23,26 @@ App.Router.map(function() {
 
 App.ApplicationRoute = Ember.Route.extend({
 	model: function() {
-		App.currentUser = "xanjoo";
-		App.defaultLocation = '7'
+		App.currentUser = '6';
+		App.defaultLocation = '1',
+		App.defaultStatus = '1',
 		App.locations = this.store.find('location');
+		App.statuses = this.store.find('status');
+		App.users = this.store.find("user");
 	}	
 });
 
 App.FjarrinpostsController = Ember.Controller.extend({
 
-
 	filter : {
 		currentLocation: App.defaultLocation,
 		mediaType: [],
-		user: null
+		user: null,
+		status: App.defaultStatus
 	},
 	
+
+
 
 	folder : [],
 
@@ -62,7 +54,7 @@ App.FjarrinpostsController = Ember.Controller.extend({
 	filter2: {
 	  locations: null,
 	  currentLocation: {
-	  	id:1
+	  	id: App.defaultLocation
 	  }
 	},
 
@@ -72,22 +64,24 @@ App.FjarrinpostsController = Ember.Controller.extend({
 		id:2
 	},
 
+	filter4: {
+		statuses: null,
+		currentStatus: {
+			id: App.defaultStatus
+		}
+	},
+
 
 
 	init: function() {
-
-		/*this.folder.add({id: 1, name: 'Alla ordrar' , active: true});
-		this.folder.add({id: 2, name: 'Mina ordrar', active: false});
-		this.folder.add({id: 3,name: 'Arkiv', active:false});*/
-
 		this.folder.pushObject(Ember.Object.create({id: 1, name: 'Alla ordrar' , active: true, user: null}));
 		this.folder.pushObject(Ember.Object.create({id: 2, name: 'Mina ordrar', active: false, user: App.currentUser}));
 		this.set("filter.currentLocation", App.defaultLocation);
 		this.set("filter2.currentLocation.id", App.defaultLocation);
+		this.set("filter4.currentStatus.id", App.defaultStatus);
 		this.set("filter2.locations", App.locations);
+		this.set("filter4.statuses", App.statuses);
 	},
-
-
 
 
 	triggerFilter : function() {
@@ -107,16 +101,25 @@ App.FjarrinpostsController = Ember.Controller.extend({
 		if (this.filter2.currentLocation.id) {
 			this.set("filter.currentLocation",this.filter2.currentLocation.id);
 		}
-		else {
-			this.set("filter.currentLocation",this.filter2.currentLocation.id);	
+		if (this.filter4.currentStatus.id) {
+			this.set("filter.status", this.filter4.currentStatus.id);
 		}
 
+
 		this.transitionToRoute("index");
-		console.log("currentLocation: " + this.filter.currentLocation + " mediatypes: " + this.filter.mediaType + " user: " + this.filter.user)
-	}.observes('folder.@each.active','filter1.active', 'filter2.currentLocation.id', 'filter3.active'),
+		console.log("currentLocation: " + this.filter.currentLocation + " mediatypes: " + this.filter.mediaType + " user: " + this.filter.user + "status: " + this.filter4.currentStatus.id);
+	}.observes('folder.@each.active','filter1.active', 'filter2.currentLocation.id', 'filter3.active', 'filter4.currentStatus.id'),
 	
 
 	actions: {
+		switchOwner: function() {
+			alert("switchOwner");
+		},
+
+		removeOwner: function() {
+			alert("removeOwner")
+		},
+
 		toggleLoan: function() {
 			if (this.get("filter1.active") === true) {
 				this.set("filter1.active", false);
@@ -157,10 +160,11 @@ App.FjarrinpostsController = Ember.Controller.extend({
 
 App.FjarrinpostController = Ember.ObjectController.extend({
 	locations: {},
-	isEditing: false,
+	isEditingOrder: false,
+	isEditingGlobalOrder: false,
 	init: function() {
 		this.locations = App.locations;
-		this.set("isEditing", false);
+		this.set("isEditingOrder", false);
 	},
 
 	locationChanged: function() {
@@ -168,16 +172,28 @@ App.FjarrinpostController = Ember.ObjectController.extend({
 	}.observes('model.locationId'),
 
 	actions: {
-		enterEditMode: function() {
-			this.set("isEditing", true);
+		enterGlobalEditMode: function() {
+			this.set("isEditingGlobalOrder", true);
 		},
+		resetGlobalMetaData: function() {
+			this.get("model").rollback();
+			this.set("isEditingGlobalOrder", false);
+		},
+		saveGlobalOrderMetaData: function() {
+			this.get("model").save();
+			this.set("isEditingGlobalOrder",false);
+		},
+		enterEditMode: function() {
+			this.set("isEditingOrder", true);
+		},
+
 		saveOrder: function() {
 			this.get("model").save(); /// check promise from server... then continue.. 
-			this.set("isEditing", false);
+			this.set("isEditingOrder", false);
 		},
 		resetOrder: function() {
 			this.get("model").rollback();
-			this.set("isEditing", false);
+			this.set("isEditingOrder", false);
 		}
 	}
 
@@ -206,6 +222,9 @@ App.FjarrinpostsRoute = Ember.Route.extend({
 
 		var result =  this.store.find('order', filter);	
 		return result;
+	},
+	afterModel: function(model) {
+		console.log(model);
 	}
 });
 

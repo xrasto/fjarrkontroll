@@ -4957,18 +4957,18 @@ a.list-group-item-danger.active:focus {
   border-bottom-color: #dddddd;
 }
 .panel-primary {
-  border-color: #004b89;
+  border-color: #222222;
 }
 .panel-primary > .panel-heading {
-  color: #ffffff;
-  background-color: #004b89;
-  border-color: #004b89;
+  color: #222222;
+  background-color: #ffffff;
+  border-color: #222222;
 }
 .panel-primary > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #004b89;
+  border-top-color: #222222;
 }
 .panel-primary > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #004b89;
+  border-bottom-color: #222222;
 }
 .panel-success {
   border-color: #d6e9c6;
@@ -5817,6 +5817,22 @@ header #logo {
   width: 275px;
   float: left;
 }
+#global-settings-order {
+  margin-bottom: 20px;
+}
+#global-settings-order h4 {
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+#global-settings-order #global-settings-order-actions {
+  margin-top: 20px;
+  font-size: 20px;
+}
+#global-settings-order #global-settings-order-actions a {
+  padding-left: 10px;
+  color: #222222;
+}
 .media .media-object {
   width: 64px;
   height: 64px;
@@ -5827,10 +5843,14 @@ header #logo {
   margin-bottom: 10px;
   background-color: #eeeeee;
 }
+#toolbar .nav {
+  margin-top: 4px;
+}
 #toolbar .nav li {
   display: inline-block;
 }
-#single-order-toolbar button {
+.panel-heading a {
+  color: #222222;
   margin-left: 10px;
 }
 #feedback {
