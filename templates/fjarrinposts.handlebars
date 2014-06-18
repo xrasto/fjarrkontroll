@@ -49,7 +49,7 @@
 					    			<td>{{item.orderType}}</td>
 					    			<td>{{trimString item.title}}</td>
 					    			<td>{{item.formLibrary}}</td>
-									<td>{{item.statusId}}</td>
+									<td>{{getStatusName item.statusId}}</td>
 									<td>
 										{{#if item.userId }}
 											<div class="btn-group">

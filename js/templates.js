@@ -35,7 +35,7 @@ function program3(depth0,data) {
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "saveGlobalOrderMetaData", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
   data.buffer.push("> <i class=\"fa fa-floppy-o\"></i> </a>\n						<a href=\"#\" class=\"pull-right\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "resetGlobalMetaData", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
-  data.buffer.push("> <i class=\"fa fa-trash-o\"></i> </a>\n					");
+  data.buffer.push("> <i class=\"fa fa-times\"></i> </a>\n					");
   return buffer;
   }
 
@@ -99,26 +99,26 @@ function program13(depth0,data) {
 function program15(depth0,data) {
   
   var buffer = '';
-  data.buffer.push("\n						<a ");
+  data.buffer.push("\n						<a href=\"#\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "saveOrder", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
   data.buffer.push(" ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'class': (":pull-right")
   },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
-  data.buffer.push("><i class=\"fa fa-floppy-o\"></i></a>\n						<a ");
+  data.buffer.push("><i class=\"fa fa-floppy-o\"></i></a>\n						<a href=\"#\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "resetOrder", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
   data.buffer.push(" ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'class': (":pull-right")
   },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
-  data.buffer.push("><i class=\"fa fa-trash-o\"></i> </a>\n					");
+  data.buffer.push("><i class=\"fa fa-times\"></i> </a>\n					");
   return buffer;
   }
 
 function program17(depth0,data) {
   
   var buffer = '';
-  data.buffer.push("\n						<a ");
+  data.buffer.push("\n						<a href=\"#\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "enterEditMode", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
   data.buffer.push(" class=\"pull-right\"><i class=\"fa fa-pencil\"></i> </a>\n					");
   return buffer;
@@ -576,10 +576,10 @@ function program77(depth0,data) {
   data.buffer.push("\n							</td>\n				\n						</tr>\n						<tr>\n							<th>Prioritet: </th>\n							<td>\n								");
   stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(77, program77, data),fn:self.program(75, program75, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n\n							</td>\n						</tr>\n					</table>\n			</div> <!-- end panel --> \n\n\n		</div>\n		<div class=\"col-xs-4\">\n			<div class=\"row\">\n				<section id=\"feedback\">\n						<div class=\"col-xs-12\">\n							<h3><i class=\"fa fa-letter\"><i class=\"fa fa-envelope-o\"></i>  Kommunikation</h3>\n						</div>\n						<form class=\"form col-xs-12\">\n							<div class=\"form-group\">\n								<select class=\"form-control\">\n								  <option>Handläggare (xljoha)</option>\n								  <option>Beställare (");
+  data.buffer.push("\n\n							</td>\n						</tr>\n					</table>\n			</div> <!-- end panel --> \n\n\n		</div>\n		<div class=\"col-xs-4\">\n			<div class=\"row\">\n				<section id=\"feedback\">\n					<div class=\"col-xs-12\">\n						<ul class=\"nav nav-tabs\">\n						  <li class=\"active\"><a href=\"#communication\" data-toggle=\"tab\"><i class=\"fa fa-envelope-o\"></i> Kommunikation</a></li>\n						  <li><a href=\"#notes\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> Anteckningar</a></li>\n						</ul>\n\n\n						<div class=\"tab-content\">\n  							<div class=\"tab-pane active\" id=\"communication\">\n								<form class=\"form\">\n									<div class=\"form-group\">\n										<select class=\"form-control\">\n										  <option>Handläggare (xljoha)</option>\n										  <option>Beställare (");
   stack1 = helpers._triageMustache.call(depth0, "model.name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push(")</option>\n								</select>\n							</div>\n							<div class=\"form-group\">\n								<label class=\"sr-only\">Rubrik:</label><input class=\"form-control\" type=\"text\" placeholder=\"rubrik\"></input>\n							</div>\n							\n							<div class=\"form-group\">\n								<label class=\"sr-only\">Meddelande:</label>\n								<textarea rows=\"6\" class=\"form-control\" placeholder=\"Här skriver du ditt meddelande...\"></textarea>\n							</div>\n							<div class=\"form-group\">\n								<button class=\"btn btn-default pull-right\" type=\"submit\">Skicka</button>\n							</div>\n						</form>\n\n						<div id=\"feedback-thread\" class=\"col-xs-12\">\n							<ul class=\"media-list\">\n								<li class=\"media\">\n							        <a class=\"pull-left\" href=\"#\">\n							          <img class=\"media-object img-circle\" src=\"img/librarian.jpg\">\n							        </a>\n							        <div class=\"media-body\">\n							          <h4 class=\"media-heading\">Media heading <span class=\"badge\">2014-10-10 13:38</span></h4>\n							          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>  \n									</div>\n								</li>\n							</ul>\n						</div>\n				</section>\n			</div>\n			<div class=\"row\">\n				<section id=\"feedback\">\n						<div class=\"col-xs-12\">\n							<h3><i class=\"fa fa-letter\"><i class=\"fa fa-comment\"></i>  Anteckningar</h3>\n						</div>\n						<form class=\"form col-xs-12\">\n							<div class=\"form-group\">\n								<label class=\"sr-only\">Meddelande:</label>\n								<textarea rows=\"6\" class=\"form-control\" placeholder=\"Här skriver du din anteckning...\"></textarea>\n							</div>\n							<div class=\"form-group\">\n								<button class=\"btn btn-default pull-right\" type=\"submit\">Skicka</button>\n							</div>\n						</form>\n\n						<div id=\"feedback-thread\" class=\"col-xs-12\">\n							<ul class=\"media-list\">\n								<li class=\"media\">\n							        <a class=\"pull-left\" href=\"#\">\n							          <img class=\"media-object img-circle\" src=\"img/librarian.jpg\">\n							        </a>\n							        <div class=\"media-body\">\n							          <p><span class=\"badge\">2013-12-01 13:22</span> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>\n							          <!-- Nested media object -->\n							         </div>\n								</li>\n							</ul>\n						</div>\n				</section>\n			</div>\n			<div class=\"row\">\n				<section id=\"external-status\">\n\n				</section>\n			</div>\n		</div>\n	</div>\n</div>");
+  data.buffer.push(")</option>\n										</select>\n									</div>\n									<div class=\"form-group\">\n										<label class=\"sr-only\">Rubrik:</label><input class=\"form-control\" type=\"text\" placeholder=\"rubrik\"></input>\n									</div>\n									\n									<div class=\"form-group\">\n										<label class=\"sr-only\">Meddelande:</label>\n										<textarea rows=\"6\" class=\"form-control\" placeholder=\"Här skriver du ditt meddelande...\"></textarea>\n									</div>\n									<div class=\"form-group\">\n										<button class=\"btn btn-default pull-right\" type=\"submit\">Skicka</button>\n									</div>\n								</form>\n  							</div>\n  							<div class=\"tab-pane\" id=\"notes\">\n								<form class=\"form\">\n									<div class=\"form-group\">\n										<label class=\"sr-only\">Meddelande:</label>\n										<textarea rows=\"6\" class=\"form-control\" placeholder=\"Här skriver du din anteckning...\"></textarea>\n									</div>\n									<div class=\"form-group\">\n										<button class=\"btn btn-default pull-right\" type=\"submit\">Skicka</button>\n									</div>\n								</form>\n  							</div>\n  						</div>\n				</section>\n			</div>\n			<div class=\"row\">\n				<section id=\"history\">\n\n					<div class=\"col-xs-12\">\n						<h5>Historik</h5>\n					</div>\n\n					<div class=\"col-xs-12\">\n						<div class=\"row\">\n							<div class=\"col-xs-12\">\n								<i class=\"fa fa-envelope-o\"></i><strong> 2014-12-12</strong> av <strong>xljoha</strong>\n							</div>\n							<div class=\"col-xs-12\">\n								<p>här är meddelandet som har skicats till någon stackars andvändare.. </p>\n							</div>\n						</div>\n					</div>\n					<!-- looopa ut meddalenden och epost grejer här --> \n\n				</section>\n\n			</div>\n		</div>\n	</div>\n</div>");
   return buffer;
   
 });
@@ -632,8 +632,7 @@ function program4(depth0,data) {
   stack1 = helpers._triageMustache.call(depth0, "item.formLibrary", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</td>\n									<td>");
-  stack1 = helpers._triageMustache.call(depth0, "item.statusId", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(escapeExpression((helper = helpers.getStatusName || (depth0 && depth0.getStatusName),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "item.statusId", options) : helperMissing.call(depth0, "getStatusName", "item.statusId", options))));
   data.buffer.push("</td>\n									<td>\n										");
   stack1 = helpers['if'].call(depth0, "item.userId", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(9, program9, data),fn:self.program(7, program7, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }

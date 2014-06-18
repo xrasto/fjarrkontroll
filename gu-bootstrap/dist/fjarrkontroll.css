@@ -4957,18 +4957,18 @@ a.list-group-item-danger.active:focus {
   border-bottom-color: #dddddd;
 }
 .panel-primary {
-  border-color: #222222;
+  border-color: #dddddd;
 }
 .panel-primary > .panel-heading {
   color: #222222;
   background-color: #ffffff;
-  border-color: #222222;
+  border-color: #dddddd;
 }
 .panel-primary > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #222222;
+  border-top-color: #dddddd;
 }
 .panel-primary > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #222222;
+  border-bottom-color: #dddddd;
 }
 .panel-success {
   border-color: #d6e9c6;
@@ -5817,6 +5817,9 @@ header #logo {
   width: 275px;
   float: left;
 }
+.tab-pane {
+  padding-top: 20px;
+}
 #global-settings-order {
   margin-bottom: 20px;
 }
@@ -5827,6 +5830,7 @@ header #logo {
   font-weight: bold;
   margin-bottom: 5px;
   margin-top: 10px;
+  font-size: 16px;
 }
 #global-settings-order #global-settings-order-actions {
   margin-top: 20px;

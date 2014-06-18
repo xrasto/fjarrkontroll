@@ -9,7 +9,7 @@
 				<div class="col-xs-6" id="global-settings-order-actions">
 					{{#if isEditingGlobalOrder}}
 						<a href="#" class="pull-right" {{action 'saveGlobalOrderMetaData'}}> <i class="fa fa-floppy-o"></i> </a>
-						<a href="#" class="pull-right" {{action 'resetGlobalMetaData'}}> <i class="fa fa-trash-o"></i> </a>
+						<a href="#" class="pull-right" {{action 'resetGlobalMetaData'}}> <i class="fa fa-times"></i> </a>
 					{{else}}
 						<a href="#" class="pull-right" {{action 'enterGlobalEditMode'}}> <i class="fa fa-pencil"></i> </a>
 					{{/if}}
@@ -115,10 +115,10 @@
 			  	Orderkort 
 				<form class="pull-right" id="single-order-toolbar">
 					{{#if isEditingOrder}}
-						<a {{action 'saveOrder'}} {{bind-attr class=":pull-right"}}><i class="fa fa-floppy-o"></i></a>
-						<a {{action 'resetOrder'}} {{bind-attr class=":pull-right"}}><i class="fa fa-trash-o"></i> </a>
+						<a href="#" {{action 'saveOrder'}} {{bind-attr class=":pull-right"}}><i class="fa fa-floppy-o"></i></a>
+						<a href="#" {{action 'resetOrder'}} {{bind-attr class=":pull-right"}}><i class="fa fa-times"></i> </a>
 					{{else}}
-						<a {{action 'enterEditMode'}} class="pull-right"><i class="fa fa-pencil"></i> </a>
+						<a href="#" {{action 'enterEditMode'}} class="pull-right"><i class="fa fa-pencil"></i> </a>
 					{{/if}}
 				</form>
 			 </div>
@@ -291,78 +291,70 @@
 		<div class="col-xs-4">
 			<div class="row">
 				<section id="feedback">
-						<div class="col-xs-12">
-							<h3><i class="fa fa-letter"><i class="fa fa-envelope-o"></i>  Kommunikation</h3>
-						</div>
-						<form class="form col-xs-12">
-							<div class="form-group">
-								<select class="form-control">
-								  <option>Handläggare (xljoha)</option>
-								  <option>Beställare ({{model.name}})</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label class="sr-only">Rubrik:</label><input class="form-control" type="text" placeholder="rubrik"></input>
-							</div>
-							
-							<div class="form-group">
-								<label class="sr-only">Meddelande:</label>
-								<textarea rows="6" class="form-control" placeholder="Här skriver du ditt meddelande..."></textarea>
-							</div>
-							<div class="form-group">
-								<button class="btn btn-default pull-right" type="submit">Skicka</button>
-							</div>
-						</form>
+					<div class="col-xs-12">
+						<ul class="nav nav-tabs">
+						  <li class="active"><a href="#communication" data-toggle="tab"><i class="fa fa-envelope-o"></i> Kommunikation</a></li>
+						  <li><a href="#notes" data-toggle="tab"><i class="fa fa-file-text-o"></i> Anteckningar</a></li>
+						</ul>
 
-						<div id="feedback-thread" class="col-xs-12">
-							<ul class="media-list">
-								<li class="media">
-							        <a class="pull-left" href="#">
-							          <img class="media-object img-circle" src="img/librarian.jpg">
-							        </a>
-							        <div class="media-body">
-							          <h4 class="media-heading">Media heading <span class="badge">2014-10-10 13:38</span></h4>
-							          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>  
+
+						<div class="tab-content">
+  							<div class="tab-pane active" id="communication">
+								<form class="form">
+									<div class="form-group">
+										<select class="form-control">
+										  <option>Handläggare (xljoha)</option>
+										  <option>Beställare ({{model.name}})</option>
+										</select>
 									</div>
-								</li>
-							</ul>
-						</div>
+									<div class="form-group">
+										<label class="sr-only">Rubrik:</label><input class="form-control" type="text" placeholder="rubrik"></input>
+									</div>
+									
+									<div class="form-group">
+										<label class="sr-only">Meddelande:</label>
+										<textarea rows="6" class="form-control" placeholder="Här skriver du ditt meddelande..."></textarea>
+									</div>
+									<div class="form-group">
+										<button class="btn btn-default pull-right" type="submit">Skicka</button>
+									</div>
+								</form>
+  							</div>
+  							<div class="tab-pane" id="notes">
+								<form class="form">
+									<div class="form-group">
+										<label class="sr-only">Meddelande:</label>
+										<textarea rows="6" class="form-control" placeholder="Här skriver du din anteckning..."></textarea>
+									</div>
+									<div class="form-group">
+										<button class="btn btn-default pull-right" type="submit">Skicka</button>
+									</div>
+								</form>
+  							</div>
+  						</div>
 				</section>
 			</div>
 			<div class="row">
-				<section id="feedback">
-						<div class="col-xs-12">
-							<h3><i class="fa fa-letter"><i class="fa fa-comment"></i>  Anteckningar</h3>
-						</div>
-						<form class="form col-xs-12">
-							<div class="form-group">
-								<label class="sr-only">Meddelande:</label>
-								<textarea rows="6" class="form-control" placeholder="Här skriver du din anteckning..."></textarea>
-							</div>
-							<div class="form-group">
-								<button class="btn btn-default pull-right" type="submit">Skicka</button>
-							</div>
-						</form>
+				<section id="history">
 
-						<div id="feedback-thread" class="col-xs-12">
-							<ul class="media-list">
-								<li class="media">
-							        <a class="pull-left" href="#">
-							          <img class="media-object img-circle" src="img/librarian.jpg">
-							        </a>
-							        <div class="media-body">
-							          <p><span class="badge">2013-12-01 13:22</span> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
-							          <!-- Nested media object -->
-							         </div>
-								</li>
-							</ul>
+					<div class="col-xs-12">
+						<h5>Historik</h5>
+					</div>
+
+					<div class="col-xs-12">
+						<div class="row">
+							<div class="col-xs-12">
+								<i class="fa fa-envelope-o"></i><strong> 2014-12-12</strong> av <strong>xljoha</strong>
+							</div>
+							<div class="col-xs-12">
+								<p>här är meddelandet som har skicats till någon stackars andvändare.. </p>
+							</div>
 						</div>
-				</section>
-			</div>
-			<div class="row">
-				<section id="external-status">
+					</div>
+					<!-- looopa ut meddalenden och epost grejer här --> 
 
 				</section>
+
 			</div>
 		</div>
 	</div>
