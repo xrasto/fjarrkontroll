@@ -100,6 +100,356 @@ function program15(depth0,data) {
   
   var buffer = '';
   data.buffer.push("\n						<a href=\"#\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "saveCustomer", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
+  data.buffer.push(" ");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'class': (":pull-right")
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push("><i class=\"fa fa-floppy-o\"></i></a>\n						<a href=\"#\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "resetCustomer", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
+  data.buffer.push(" ");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'class': (":pull-right")
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push("><i class=\"fa fa-times\"></i> </a>\n					");
+  return buffer;
+  }
+
+function program17(depth0,data) {
+  
+  var buffer = '';
+  data.buffer.push("\n						<a href=\"#\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "enterCustomerEditMode", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
+  data.buffer.push(" class=\"pull-right\"><i class=\"fa fa-pencil\"></i> </a>\n					");
+  return buffer;
+  }
+
+function program19(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n							<td>");
+  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
+    'classNames': ("form-control"),
+    'type': ("text"),
+    'value': ("model.name")
+  },hashTypes:{'classNames': "STRING",'type': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program21(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n							<td>");
+  stack1 = helpers._triageMustache.call(depth0, "model.name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program23(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n							<td>");
+  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
+    'classNames': ("form-control"),
+    'type': ("text"),
+    'value': ("model.company1")
+  },hashTypes:{'classNames': "STRING",'type': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program25(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n							<td>");
+  stack1 = helpers._triageMustache.call(depth0, "model.company1", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program27(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n							<td>");
+  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
+    'classNames': ("form-control"),
+    'type': ("text"),
+    'value': ("model.company2")
+  },hashTypes:{'classNames': "STRING",'type': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program29(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n							<td>");
+  stack1 = helpers._triageMustache.call(depth0, "model.company2", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program31(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n							<td>");
+  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
+    'classNames': ("form-control"),
+    'type': ("text"),
+    'value': ("model.company3")
+  },hashTypes:{'classNames': "STRING",'type': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program33(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n							<td>");
+  stack1 = helpers._triageMustache.call(depth0, "model.company3", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program35(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n							<td>");
+  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
+    'classNames': ("form-control"),
+    'type': ("text"),
+    'value': ("model.phone_number")
+  },hashTypes:{'classNames': "STRING",'type': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program37(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n							<td>");
+  stack1 = helpers._triageMustache.call(depth0, "model.phone_number", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program39(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n							<td>");
+  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
+    'classNames': ("form-control"),
+    'type': ("text"),
+    'value': ("model.email_address")
+  },hashTypes:{'classNames': "STRING",'type': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program41(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n							<td>");
+  stack1 = helpers._triageMustache.call(depth0, "model.email_address", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program43(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n							<td>");
+  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
+    'classNames': ("form-control"),
+    'type': ("text"),
+    'value': ("model.library_card_number")
+  },hashTypes:{'classNames': "STRING",'type': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program45(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n							<td>");
+  stack1 = helpers._triageMustache.call(depth0, "model.library_card_number", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program47(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n							<td>");
+  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
+    'classNames': ("form-control"),
+    'type': ("text"),
+    'value': ("model.customer_type")
+  },hashTypes:{'classNames': "STRING",'type': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program49(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n							<td>");
+  stack1 = helpers._triageMustache.call(depth0, "model.customer_type", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program51(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n							<td>");
+  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
+    'classNames': ("form-control"),
+    'type': ("text"),
+    'value': ("model.comments")
+  },hashTypes:{'classNames': "STRING",'type': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program53(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n							<td>");
+  stack1 = helpers._triageMustache.call(depth0, "model.comments", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program55(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n							<td>");
+  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
+    'classNames': ("form-control"),
+    'type': ("text"),
+    'value': ("model.form_lang")
+  },hashTypes:{'classNames': "STRING",'type': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program57(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n							<td>");
+  stack1 = helpers._triageMustache.call(depth0, "model.form_lang", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program59(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n							<td>");
+  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
+    'classNames': ("form-control"),
+    'type': ("text"),
+    'value': ("model.invoicing_name")
+  },hashTypes:{'classNames': "STRING",'type': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program61(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n							<td>");
+  stack1 = helpers._triageMustache.call(depth0, "model.invoicing_name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program63(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n							<td>");
+  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
+    'classNames': ("form-control"),
+    'type': ("text"),
+    'value': ("model.invoicing_address")
+  },hashTypes:{'classNames': "STRING",'type': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program65(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n							<td>");
+  stack1 = helpers._triageMustache.call(depth0, "model.invoicing_address", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program67(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n							<td>");
+  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
+    'classNames': ("form-control"),
+    'type': ("text"),
+    'value': ("model.invoicing_postal_address1")
+  },hashTypes:{'classNames': "STRING",'type': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program69(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n							<td>");
+  stack1 = helpers._triageMustache.call(depth0, "model.invoicing_postal_address1", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program71(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n							<td>");
+  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
+    'classNames': ("form-control"),
+    'type': ("text"),
+    'value': ("model.invoicing_postal_address2")
+  },hashTypes:{'classNames': "STRING",'type': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program73(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n							<td>");
+  stack1 = helpers._triageMustache.call(depth0, "model.invoicing_postal_address2", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n						");
+  return buffer;
+  }
+
+function program75(depth0,data) {
+  
+  var buffer = '';
+  data.buffer.push("\n						<a href=\"#\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "saveOrder", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
   data.buffer.push(" ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
@@ -115,7 +465,7 @@ function program15(depth0,data) {
   return buffer;
   }
 
-function program17(depth0,data) {
+function program77(depth0,data) {
   
   var buffer = '';
   data.buffer.push("\n						<a href=\"#\" ");
@@ -124,7 +474,7 @@ function program17(depth0,data) {
   return buffer;
   }
 
-function program19(depth0,data) {
+function program79(depth0,data) {
   
   var buffer = '', helper, options;
   data.buffer.push("\n									");
@@ -137,7 +487,7 @@ function program19(depth0,data) {
   return buffer;
   }
 
-function program21(depth0,data) {
+function program81(depth0,data) {
   
   var buffer = '', stack1;
   data.buffer.push("\n									");
@@ -147,7 +497,7 @@ function program21(depth0,data) {
   return buffer;
   }
 
-function program23(depth0,data) {
+function program83(depth0,data) {
   
   var buffer = '', helper, options;
   data.buffer.push("\n									");
@@ -160,7 +510,7 @@ function program23(depth0,data) {
   return buffer;
   }
 
-function program25(depth0,data) {
+function program85(depth0,data) {
   
   var buffer = '', stack1;
   data.buffer.push("\n									");
@@ -170,7 +520,7 @@ function program25(depth0,data) {
   return buffer;
   }
 
-function program27(depth0,data) {
+function program87(depth0,data) {
   
   var buffer = '', helper, options;
   data.buffer.push("\n									");
@@ -183,7 +533,7 @@ function program27(depth0,data) {
   return buffer;
   }
 
-function program29(depth0,data) {
+function program89(depth0,data) {
   
   var buffer = '', stack1;
   data.buffer.push("\n									");
@@ -193,7 +543,7 @@ function program29(depth0,data) {
   return buffer;
   }
 
-function program31(depth0,data) {
+function program91(depth0,data) {
   
   var buffer = '', helper, options;
   data.buffer.push("\n									");
@@ -206,7 +556,7 @@ function program31(depth0,data) {
   return buffer;
   }
 
-function program33(depth0,data) {
+function program93(depth0,data) {
   
   var buffer = '', stack1;
   data.buffer.push("\n									");
@@ -216,7 +566,7 @@ function program33(depth0,data) {
   return buffer;
   }
 
-function program35(depth0,data) {
+function program95(depth0,data) {
   
   var buffer = '', helper, options;
   data.buffer.push("\n									");
@@ -229,7 +579,7 @@ function program35(depth0,data) {
   return buffer;
   }
 
-function program37(depth0,data) {
+function program97(depth0,data) {
   
   var buffer = '', stack1;
   data.buffer.push("\n									");
@@ -239,7 +589,7 @@ function program37(depth0,data) {
   return buffer;
   }
 
-function program39(depth0,data) {
+function program99(depth0,data) {
   
   var buffer = '', helper, options;
   data.buffer.push("\n									");
@@ -252,7 +602,7 @@ function program39(depth0,data) {
   return buffer;
   }
 
-function program41(depth0,data) {
+function program101(depth0,data) {
   
   var buffer = '', stack1;
   data.buffer.push("\n									");
@@ -262,7 +612,7 @@ function program41(depth0,data) {
   return buffer;
   }
 
-function program43(depth0,data) {
+function program103(depth0,data) {
   
   var buffer = '', helper, options;
   data.buffer.push("\n									");
@@ -275,7 +625,7 @@ function program43(depth0,data) {
   return buffer;
   }
 
-function program45(depth0,data) {
+function program105(depth0,data) {
   
   var buffer = '', stack1;
   data.buffer.push("\n									");
@@ -285,7 +635,7 @@ function program45(depth0,data) {
   return buffer;
   }
 
-function program47(depth0,data) {
+function program107(depth0,data) {
   
   var buffer = '', helper, options;
   data.buffer.push("\n									");
@@ -298,7 +648,7 @@ function program47(depth0,data) {
   return buffer;
   }
 
-function program49(depth0,data) {
+function program109(depth0,data) {
   
   var buffer = '', stack1;
   data.buffer.push("\n									");
@@ -308,7 +658,7 @@ function program49(depth0,data) {
   return buffer;
   }
 
-function program51(depth0,data) {
+function program111(depth0,data) {
   
   var buffer = '', helper, options;
   data.buffer.push("\n									");
@@ -321,7 +671,7 @@ function program51(depth0,data) {
   return buffer;
   }
 
-function program53(depth0,data) {
+function program113(depth0,data) {
   
   var buffer = '', stack1;
   data.buffer.push("\n									");
@@ -331,7 +681,7 @@ function program53(depth0,data) {
   return buffer;
   }
 
-function program55(depth0,data) {
+function program115(depth0,data) {
   
   var buffer = '', helper, options;
   data.buffer.push("\n									");
@@ -344,7 +694,7 @@ function program55(depth0,data) {
   return buffer;
   }
 
-function program57(depth0,data) {
+function program117(depth0,data) {
   
   var buffer = '', stack1;
   data.buffer.push("\n									");
@@ -354,76 +704,79 @@ function program57(depth0,data) {
   return buffer;
   }
 
-function program59(depth0,data) {
+function program119(depth0,data) {
   
-  var buffer = '', helper, options;
+  var buffer = '';
   data.buffer.push("\n									");
-  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.Select", {hash:{
     'classNames': ("form-control"),
-    'type': ("text"),
+    'content': ("photocopiesIfLoanNotPossible"),
+    'optionValuePath': ("content.value"),
+    'optionLabelPath': ("content.label"),
     'value': ("model.photocopiesIfLoanNotPossible")
-  },hashTypes:{'classNames': "STRING",'type': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  },hashTypes:{'classNames': "STRING",'content': "ID",'optionValuePath': "STRING",'optionLabelPath': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'content': depth0,'optionValuePath': depth0,'optionLabelPath': depth0,'value': depth0},contexts:[depth0],types:["ID"],data:data})));
   data.buffer.push("\n								");
   return buffer;
   }
 
-function program61(depth0,data) {
-  
-  var buffer = '', stack1;
-  data.buffer.push("\n									");
-  stack1 = helpers._triageMustache.call(depth0, "model.photocopiesIfLoanNotPossible", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n								");
-  return buffer;
-  }
-
-function program63(depth0,data) {
+function program121(depth0,data) {
   
   var buffer = '', helper, options;
   data.buffer.push("\n									");
-  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
+  data.buffer.push(escapeExpression((helper = helpers.convertBooleanToDisplayText || (depth0 && depth0.convertBooleanToDisplayText),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "model.photocopiesIfLoanNotPossible", options) : helperMissing.call(depth0, "convertBooleanToDisplayText", "model.photocopiesIfLoanNotPossible", options))));
+  data.buffer.push("\n								");
+  return buffer;
+  }
+
+function program123(depth0,data) {
+  
+  var buffer = '';
+  data.buffer.push("\n									");
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.Select", {hash:{
     'classNames': ("form-control"),
-    'type': ("text"),
+    'content': ("orderOutsideScandinavia"),
+    'optionValuePath': ("content.value"),
+    'optionLabelPath': ("content.label"),
     'value': ("model.orderOutsideScandinavia")
-  },hashTypes:{'classNames': "STRING",'type': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  },hashTypes:{'classNames': "STRING",'content': "ID",'optionValuePath': "STRING",'optionLabelPath': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'content': depth0,'optionValuePath': depth0,'optionLabelPath': depth0,'value': depth0},contexts:[depth0],types:["ID"],data:data})));
   data.buffer.push("\n								");
   return buffer;
   }
 
-function program65(depth0,data) {
-  
-  var buffer = '', stack1;
-  data.buffer.push("\n									");
-  stack1 = helpers._triageMustache.call(depth0, "model.orderOutsideScandinavia", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n								");
-  return buffer;
-  }
-
-function program67(depth0,data) {
+function program125(depth0,data) {
   
   var buffer = '', helper, options;
   data.buffer.push("\n									");
-  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
-    'classNames': ("form-control"),
-    'type': ("text"),
-    'value': ("model.emailConfirmation")
-  },hashTypes:{'classNames': "STRING",'type': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push(escapeExpression((helper = helpers.convertBooleanToDisplayText || (depth0 && depth0.convertBooleanToDisplayText),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "model.orderOutsideScandinavia", options) : helperMissing.call(depth0, "convertBooleanToDisplayText", "model.orderOutsideScandinavia", options))));
   data.buffer.push("\n								");
   return buffer;
   }
 
-function program69(depth0,data) {
+function program127(depth0,data) {
   
-  var buffer = '', stack1;
+  var buffer = '';
   data.buffer.push("\n									");
-  stack1 = helpers._triageMustache.call(depth0, "model.emailConfirmation", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.Select", {hash:{
+    'classNames': ("form-control"),
+    'content': ("emailConfirmation"),
+    'optionValuePath': ("content.value"),
+    'optionLabelPath': ("content.label"),
+    'value': ("model.emailConfirmation")
+  },hashTypes:{'classNames': "STRING",'content': "ID",'optionValuePath': "STRING",'optionLabelPath': "STRING",'value': "ID"},hashContexts:{'classNames': depth0,'content': depth0,'optionValuePath': depth0,'optionLabelPath': depth0,'value': depth0},contexts:[depth0],types:["ID"],data:data})));
   data.buffer.push("\n								");
   return buffer;
   }
 
-function program71(depth0,data) {
+function program129(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n									");
+  data.buffer.push(escapeExpression((helper = helpers.convertBooleanToDisplayText || (depth0 && depth0.convertBooleanToDisplayText),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "model.emailConfirmation", options) : helperMissing.call(depth0, "convertBooleanToDisplayText", "model.emailConfirmation", options))));
+  data.buffer.push("\n								");
+  return buffer;
+  }
+
+function program131(depth0,data) {
   
   var buffer = '', helper, options;
   data.buffer.push("\n									");
@@ -436,7 +789,7 @@ function program71(depth0,data) {
   return buffer;
   }
 
-function program73(depth0,data) {
+function program133(depth0,data) {
   
   var buffer = '', stack1;
   data.buffer.push("\n									");
@@ -446,7 +799,7 @@ function program73(depth0,data) {
   return buffer;
   }
 
-function program75(depth0,data) {
+function program135(depth0,data) {
   
   var buffer = '', helper, options;
   data.buffer.push("\n									");
@@ -459,7 +812,7 @@ function program75(depth0,data) {
   return buffer;
   }
 
-function program77(depth0,data) {
+function program137(depth0,data) {
   
   var buffer = '', stack1;
   data.buffer.push("\n									");
@@ -486,95 +839,98 @@ function program77(depth0,data) {
   data.buffer.push("\n\n				<h4>Status: </h4> \n				");
   stack1 = helpers['if'].call(depth0, "isEditingGlobalOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(13, program13, data),fn:self.program(11, program11, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n			</form>\n		</div>\n	</div>\n	<div class=\"row\">\n		<div class=\"col-xs-4\">\n			<div class=\"panel panel-primary\">\n				<div class=\"panel-heading\">Låntagare</div>\n				<table class=\"table table-bordered table-condensed\">\n					<tr>\n						<th>Namn: </th>\n						<td>");
-  stack1 = helpers._triageMustache.call(depth0, "model.name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("\n			</form>\n		</div>\n	</div>\n	<div class=\"row\">\n		<div class=\"col-xs-4\">\n			<div class=\"panel panel-primary\">\n				<div class=\"panel-heading\">\n				Låntagare\n				<form class=\"pull-right\" id=\"single-order-toolbar\">\n					");
+  stack1 = helpers['if'].call(depth0, "isEditingCustomer", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(17, program17, data),fn:self.program(15, program15, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n					</tr>\n					<tr>\n						<th>company1: </th>\n						<td>");
-  stack1 = helpers._triageMustache.call(depth0, "model.company1", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("\n				</form>\n				</div>\n				<table class=\"table table-bordered table-condensed\">\n					<tr>\n						<th>Namn: </th>\n						");
+  stack1 = helpers['if'].call(depth0, "isEditingCustomer", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(21, program21, data),fn:self.program(19, program19, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n					</tr>\n					<tr>\n						<th>company2: </th>\n						<td>");
-  stack1 = helpers._triageMustache.call(depth0, "model.company2", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("\n					</tr>\n					<tr>\n						<th>company1: </th>\n						");
+  stack1 = helpers['if'].call(depth0, "isEditingCustomer", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(25, program25, data),fn:self.program(23, program23, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n						\n					</tr>\n					<tr>\n						<th>company3: </th>\n						<td>");
-  stack1 = helpers._triageMustache.call(depth0, "model.company3", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("\n					</tr>\n					<tr>\n						<th>company2: </th>\n						");
+  stack1 = helpers['if'].call(depth0, "isEditingCustomer", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(29, program29, data),fn:self.program(27, program27, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n						\n					</tr>\n					<tr>\n						<th>Telefon: </th>\n						<td>");
-  stack1 = helpers._triageMustache.call(depth0, "model.phone_number", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("\n						\n					</tr>\n					<tr>\n						<th>company3: </th>\n						");
+  stack1 = helpers['if'].call(depth0, "isEditingCustomer", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(33, program33, data),fn:self.program(31, program31, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n						\n					</tr>\n					<tr>\n						<th>E-post: </th>\n						<td>");
-  stack1 = helpers._triageMustache.call(depth0, "model.email_address", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("\n					</tr>\n					<tr>\n						<th>Telefon: </th>\n						");
+  stack1 = helpers['if'].call(depth0, "isEditingCustomer", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(37, program37, data),fn:self.program(35, program35, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n						\n					</tr>\n					<tr>\n						<th>Lånekortsnummer: </th>\n						<td>");
-  stack1 = helpers._triageMustache.call(depth0, "model.library_card_number", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("\n						\n					</tr>\n					<tr>\n						<th>E-post: </th>\n						");
+  stack1 = helpers['if'].call(depth0, "isEditingCustomer", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(41, program41, data),fn:self.program(39, program39, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n						\n					</tr>\n					<tr>\n						<th>Kundtyp: </th>\n						<td>");
-  stack1 = helpers._triageMustache.call(depth0, "model.customer_type", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("\n					</tr>\n					<tr>\n						<th>Lånekortsnummer: </th>\n						");
+  stack1 = helpers['if'].call(depth0, "isEditingCustomer", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(45, program45, data),fn:self.program(43, program43, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n						\n					</tr>\n					<tr>\n						<th>Kommentar: </th>\n						<td>");
-  stack1 = helpers._triageMustache.call(depth0, "model.comments", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("\n					</tr>\n					<tr>\n						<th>Kundtyp: </th>\n						");
+  stack1 = helpers['if'].call(depth0, "isEditingCustomer", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(49, program49, data),fn:self.program(47, program47, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n						\n					</tr>\n					<tr>\n						<th>Formulärspråk: </th>\n						<td>");
-  stack1 = helpers._triageMustache.call(depth0, "model.form_lang", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("						\n					</tr>\n					<tr>\n						<th>Kommentar: </th>\n						");
+  stack1 = helpers['if'].call(depth0, "isEditingCustomer", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(53, program53, data),fn:self.program(51, program51, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n						\n					</tr>\n					<tr>\n						<th>Fakturanamn: </th>\n						<td>");
-  stack1 = helpers._triageMustache.call(depth0, "model.invoicing_name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("								\n					</tr>\n					<tr>\n						<th>Formulärspråk: </th>\n						");
+  stack1 = helpers['if'].call(depth0, "isEditingCustomer", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(57, program57, data),fn:self.program(55, program55, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n						\n					</tr>\n					<tr>\n						<th>Fakturaaddress: </th>\n						<td>");
-  stack1 = helpers._triageMustache.call(depth0, "model.invoicing_address", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("			\n					</tr>\n					<tr>\n						<th>Fakturanamn: </th>\n						");
+  stack1 = helpers['if'].call(depth0, "isEditingCustomer", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(61, program61, data),fn:self.program(59, program59, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n						\n					</tr>\n					<tr>\n						<th>invoicing_postal_address1: </th>\n						<td>");
-  stack1 = helpers._triageMustache.call(depth0, "model.invoicing_postal_address1", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("							\n					</tr>\n					<tr>\n						<th>Fakturaaddress: </th>\n						");
+  stack1 = helpers['if'].call(depth0, "isEditingCustomer", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(65, program65, data),fn:self.program(63, program63, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n						\n					</tr>\n					<tr>\n						<th>invoicing_postal_address1: </th>\n						<td>");
-  stack1 = helpers._triageMustache.call(depth0, "model.invoicing_postal_address2", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("		\n					</tr>\n					<tr>\n						<th>invoicing_postal_address1: </th>\n						");
+  stack1 = helpers['if'].call(depth0, "isEditingCustomer", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(69, program69, data),fn:self.program(67, program67, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n						\n					</tr>\n		\n				</table>\n			</div> <!-- end panel -->\n		</div>\n		<div class=\"col-xs-4\">\n			<div class=\"panel panel-primary\">\n			  <div class=\"panel-heading\">\n			  	Orderkort \n				<form class=\"pull-right\" id=\"single-order-toolbar\">\n					");
-  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(17, program17, data),fn:self.program(15, program15, data),contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("								\n					</tr>\n					<tr>\n						<th>invoicing_postal_address1: </th>\n						");
+  stack1 = helpers['if'].call(depth0, "isEditingCustomer", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(73, program73, data),fn:self.program(71, program71, data),contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("								\n					</tr>\n		\n				</table>\n			</div> <!-- end panel -->\n		</div>\n		<div class=\"col-xs-4\">\n			<div class=\"panel panel-primary\">\n			  <div class=\"panel-heading\">\n			  	Orderkort \n				<form class=\"pull-right\" id=\"single-order-toolbar\">\n					");
+  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(77, program77, data),fn:self.program(75, program75, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n				</form>\n			 </div>\n\n					<table class=\"table table-bordered table-condensed\">\n						<tr>\n							<th>Titel: </th>\n							<td>\n								");
-  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(21, program21, data),fn:self.program(19, program19, data),contexts:[depth0],types:["ID"],data:data});
+  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(81, program81, data),fn:self.program(79, program79, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n							</td>\n							\n						</tr>\n						<tr>\n							<th>Författare: </th>\n							<td>\n								");
-  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(25, program25, data),fn:self.program(23, program23, data),contexts:[depth0],types:["ID"],data:data});
+  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(85, program85, data),fn:self.program(83, program83, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n							</td>\n						</tr>\n\n						<tr>\n							<th>Leveransbibliotek: </th>\n							<td>\n								");
-  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(29, program29, data),fn:self.program(27, program27, data),contexts:[depth0],types:["ID"],data:data});
+  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(89, program89, data),fn:self.program(87, program87, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n							</td>\n						</tr>\n						<tr>\n							<th>ISSN / ISBN: </th>\n							<td>\n								");
-  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(33, program33, data),fn:self.program(31, program31, data),contexts:[depth0],types:["ID"],data:data});
+  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(93, program93, data),fn:self.program(91, program91, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n							</td>\n						</tr>\n						<tr>\n							<th>Ordertyp: </th>\n							<td>\n								");
-  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(37, program37, data),fn:self.program(35, program35, data),contexts:[depth0],types:["ID"],data:data});
+  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(97, program97, data),fn:self.program(95, program95, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n							</td>\n\n						</tr>\n						<tr>\n							<th>Volym: </th>\n							<td>\n								");
-  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(41, program41, data),fn:self.program(39, program39, data),contexts:[depth0],types:["ID"],data:data});
+  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(101, program101, data),fn:self.program(99, program99, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n							</td>\n\n\n						</tr>\n						<tr>\n							<th>Publikations-år: </th>\n							<td>								\n								");
-  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(45, program45, data),fn:self.program(43, program43, data),contexts:[depth0],types:["ID"],data:data});
+  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(105, program105, data),fn:self.program(103, program103, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n							</td>\n						</tr>\n						<tr>\n							<th>Nummer (issue): </th>\n							<td>\n								");
-  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(49, program49, data),fn:self.program(47, program47, data),contexts:[depth0],types:["ID"],data:data});
+  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(109, program109, data),fn:self.program(107, program107, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n							</td>\n\n						</tr>\n						<tr>\n							<th>Sidor: </th>\n							<td>\n								");
-  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(53, program53, data),fn:self.program(51, program51, data),contexts:[depth0],types:["ID"],data:data});
+  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(113, program113, data),fn:self.program(111, program111, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n							</td>\n\n						</tr>\n						<tr>\n							<th>Journal titel: </th>\n							<td>\n								");
-  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(57, program57, data),fn:self.program(55, program55, data),contexts:[depth0],types:["ID"],data:data});
+  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(117, program117, data),fn:self.program(115, program115, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n							</td>\n						</tr>\n						<tr>\n							<th>Kopia (om lån ej möjligt): </th>\n							<td>\n								");
-  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(61, program61, data),fn:self.program(59, program59, data),contexts:[depth0],types:["ID"],data:data});
+  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(121, program121, data),fn:self.program(119, program119, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n							</td>\n						</tr>\n						<tr>\n							<th>Utanför skandinavien: </th>\n							<td>\n								");
-  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(65, program65, data),fn:self.program(63, program63, data),contexts:[depth0],types:["ID"],data:data});
+  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(125, program125, data),fn:self.program(123, program123, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n							</td>\n						</tr>\n						<tr>\n							<th>E-post konfirmation: </th>\n							<td>\n								");
-  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(69, program69, data),fn:self.program(67, program67, data),contexts:[depth0],types:["ID"],data:data});
+  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(129, program129, data),fn:self.program(127, program127, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n							</td>\n						</tr>\n						<tr>\n							<th>Bäst-före-datum: </th>\n							<td>\n								");
-  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(73, program73, data),fn:self.program(71, program71, data),contexts:[depth0],types:["ID"],data:data});
+  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(133, program133, data),fn:self.program(131, program131, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n							</td>\n				\n						</tr>\n						<tr>\n							<th>Prioritet: </th>\n							<td>\n								");
-  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(77, program77, data),fn:self.program(75, program75, data),contexts:[depth0],types:["ID"],data:data});
+  stack1 = helpers['if'].call(depth0, "isEditingOrder", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(137, program137, data),fn:self.program(135, program135, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n\n							</td>\n						</tr>\n					</table>\n			</div> <!-- end panel --> \n\n\n		</div>\n		<div class=\"col-xs-4\">\n			<div class=\"row\">\n				<section id=\"feedback\">\n					<div class=\"col-xs-12\">\n						<ul class=\"nav nav-tabs\">\n						  <li class=\"active\"><a href=\"#communication\" data-toggle=\"tab\"><i class=\"fa fa-envelope-o\"></i> Kommunikation</a></li>\n						  <li><a href=\"#notes\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> Anteckningar</a></li>\n						</ul>\n\n\n						<div class=\"tab-content\">\n  							<div class=\"tab-pane active\" id=\"communication\">\n								<form class=\"form\">\n									<div class=\"form-group\">\n										<select class=\"form-control\">\n										  <option>Handläggare (xljoha)</option>\n										  <option>Beställare (");
   stack1 = helpers._triageMustache.call(depth0, "model.name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
@@ -653,11 +1009,11 @@ function program7(depth0,data) {
   data.buffer.push("\n											<div class=\"btn-group\">\n											  <button type=\"button\" class=\"btn btn-default btn-xs dropdown-toggle\" data-toggle=\"dropdown\">\n											    <i class=\"fa fa-male\"></i> ");
   data.buffer.push(escapeExpression((helper = helpers.getUserName || (depth0 && depth0.getUserName),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "item.userId", options) : helperMissing.call(depth0, "getUserName", "item.userId", options))));
   data.buffer.push(" <span class=\"caret\"></span>\n											  </button>\n											  <ul class=\"dropdown-menu\" role=\"menu\">\n											    <li><a href=\"#\" ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "switchOwner", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "switchOwner", "item.id", "item.userId", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data})));
   data.buffer.push("<i class=\"fa fa-male\"></i> ");
   data.buffer.push(escapeExpression((helper = helpers.getUserName || (depth0 && depth0.getUserName),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "App.currentUser", options) : helperMissing.call(depth0, "getUserName", "App.currentUser", options))));
   data.buffer.push("</a>\n											   	</li>\n											    <li><a ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "removeOwner", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "removeOwner", "item.id", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["ID","ID"],data:data})));
   data.buffer.push(" href=\"#\">Släpp order</a></li>	\n											  </ul>\n											</div>\n										");
   return buffer;
   }
@@ -666,10 +1022,12 @@ function program9(depth0,data) {
   
   var buffer = '', helper, options;
   data.buffer.push("\n											<div class=\"btn-group\">\n											  <button type=\"button\" class=\"btn btn-default btn-xs dropdown-toggle\" data-toggle=\"dropdown\">\n											    <i class=\"fa fa-question-circle\"></i> Ingen <span class=\"caret\"></span>\n											  </button>\n											  <ul class=\"dropdown-menu\" role=\"menu\">\n											    <li><a ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "switchOwner", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "switchOwner", "item.id", "App.currentUser", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data})));
   data.buffer.push(" href=\"#\"><i class=\"fa fa-male\"></i> ");
   data.buffer.push(escapeExpression((helper = helpers.getUserName || (depth0 && depth0.getUserName),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "App.currentUser", options) : helperMissing.call(depth0, "getUserName", "App.currentUser", options))));
-  data.buffer.push("</a></li>\n											    <li><a href=\"#\">Släpp order</a></li>	\n											  </ul>\n											</div>\n										");
+  data.buffer.push("</a></li>\n											    <li><a ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "removeOwner", "item.id", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["ID","ID"],data:data})));
+  data.buffer.push(" href=\"#\">Släpp order</a></li>		\n											  </ul>\n											</div>\n										");
   return buffer;
   }
 

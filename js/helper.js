@@ -33,9 +33,16 @@ Ember.Handlebars.registerBoundHelper('getLocationName', function(id) {
 
 });
 
-Ember.Handlebars.registerBoundHelper('getStatusName', function(id) {  
-	console.log("inkommen: " + id);
+Ember.Handlebars.registerBoundHelper('convertBooleanToDisplayText', function(bool) {
+	if (bool) {
+		return new Handlebars.SafeString("Ja");
+	}
+	else {
+		return new Handlebars.SafeString("Nej");
+	}
+});
 
+Ember.Handlebars.registerBoundHelper('getStatusName', function(id) {  
 	if (id) {
 		var status = App.statuses.find(function(item) {
 				if (item.id === id.toString())  {

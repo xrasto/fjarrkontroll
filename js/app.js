@@ -77,6 +77,7 @@ App.FjarrinpostsController = Ember.Controller.extend({
 		this.folder.pushObject(Ember.Object.create({id: 1, name: 'Alla ordrar' , active: true, user: null}));
 		this.folder.pushObject(Ember.Object.create({id: 2, name: 'Mina ordrar', active: false, user: App.currentUser}));
 		this.set("filter.currentLocation", App.defaultLocation);
+		this.set("filter.status", App.defaultStatus);
 		this.set("filter2.currentLocation.id", App.defaultLocation);
 		this.set("filter4.currentStatus.id", App.defaultStatus);
 		this.set("filter2.locations", App.locations);
@@ -112,12 +113,30 @@ App.FjarrinpostsController = Ember.Controller.extend({
 	
 
 	actions: {
-		switchOwner: function() {
-			alert("switchOwner");
+		switchOwner: function(orderId, userId) {
+			this.store.find("order", orderId).then(function(item) {
+				item.set("userId", userId);
+
+
+		
+				item.save();
+			})
 		},
 
-		removeOwner: function() {
-			alert("removeOwner")
+		removeOwner: function(orderId) {
+			var self = this;
+			this.store.find("order", orderId).then(function(item) {
+				item.set("userId", null);
+				var onError = function() {
+					self.transitionToRoute("index");
+				}
+				var onSuccess = function() {
+				}
+
+				item.save().then(onSuccess, onError);
+				
+
+			});
 		},
 
 		toggleLoan: function() {
@@ -160,11 +179,47 @@ App.FjarrinpostsController = Ember.Controller.extend({
 
 App.FjarrinpostController = Ember.ObjectController.extend({
 	locations: {},
+	emailConfirmation: [
+		{	
+			value: true,
+			label: "ja"
+		},
+		{	
+			value: false,
+			label: "nej"
+		}
+	],
+	orderOutsideScandinavia: [
+		{	
+			value: true,
+			label: "ja"
+		},
+		{	
+			value: false,
+			label: "nej"
+		}
+	],
+
+	photocopiesIfLoanNotPossible: [
+		{	
+			value: true,
+			label: "ja"
+		},
+		{	
+			value: false,
+			label: "nej"
+		}
+	],
+	
 	isEditingOrder: false,
 	isEditingGlobalOrder: false,
+	isEditingCustomer: false, 
+
 	init: function() {
 		this.locations = App.locations;
 		this.set("isEditingOrder", false);
+		this.set("isEditingGlobalOrder", false);
+		this.set("isEditingCustomer", false);	
 	},
 
 	locationChanged: function() {
@@ -186,7 +241,13 @@ App.FjarrinpostController = Ember.ObjectController.extend({
 		enterEditMode: function() {
 			this.set("isEditingOrder", true);
 		},
-
+		enterCustomerEditMode: function() {
+			this.set("isEditingCustomer", true);
+		},
+		saveCustomer: function() {
+			this.get("model").save();
+			this.set("isEditingCustomer", false);
+		},
 		saveOrder: function() {
 			this.get("model").save(); /// check promise from server... then continue.. 
 			this.set("isEditingOrder", false);
@@ -194,7 +255,12 @@ App.FjarrinpostController = Ember.ObjectController.extend({
 		resetOrder: function() {
 			this.get("model").rollback();
 			this.set("isEditingOrder", false);
+		}, 
+		resetCustomer: function() {
+			this.get("model").rollback();
+			this.set("isEditingCustomer",false);
 		}
+
 	}
 
 

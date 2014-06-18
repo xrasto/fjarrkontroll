@@ -35,75 +35,131 @@
 	<div class="row">
 		<div class="col-xs-4">
 			<div class="panel panel-primary">
-				<div class="panel-heading">Låntagare</div>
+				<div class="panel-heading">
+				Låntagare
+				<form class="pull-right" id="single-order-toolbar">
+					{{#if isEditingCustomer}}
+						<a href="#" {{action 'saveCustomer'}} {{bind-attr class=":pull-right"}}><i class="fa fa-floppy-o"></i></a>
+						<a href="#" {{action 'resetCustomer'}} {{bind-attr class=":pull-right"}}><i class="fa fa-times"></i> </a>
+					{{else}}
+						<a href="#" {{action 'enterCustomerEditMode'}} class="pull-right"><i class="fa fa-pencil"></i> </a>
+					{{/if}}
+				</form>
+				</div>
 				<table class="table table-bordered table-condensed">
 					<tr>
 						<th>Namn: </th>
-						<td>{{model.name}}</td>
+						{{#if isEditingCustomer}}
+							<td>{{input classNames="form-control" type="text" value=model.name}}</td>
+						{{else}}
+							<td>{{model.name}}</td>
+						{{/if}}
 					</tr>
 					<tr>
 						<th>company1: </th>
-						<td>{{model.company1}}</td>
+						{{#if isEditingCustomer}}
+							<td>{{input classNames="form-control" type="text" value=model.company1}}</td>
+						{{else}}
+							<td>{{model.company1}}</td>
+						{{/if}}
 					</tr>
 					<tr>
 						<th>company2: </th>
-						<td>{{model.company2}}</td>
+						{{#if isEditingCustomer}}
+							<td>{{input classNames="form-control" type="text" value=model.company2}}</td>
+						{{else}}
+							<td>{{model.company2}}</td>
+						{{/if}}
 						
 					</tr>
 					<tr>
 						<th>company3: </th>
-						<td>{{model.company3}}</td>
-						
+						{{#if isEditingCustomer}}
+							<td>{{input classNames="form-control" type="text" value=model.company3}}</td>
+						{{else}}
+							<td>{{model.company3}}</td>
+						{{/if}}
 					</tr>
 					<tr>
 						<th>Telefon: </th>
-						<td>{{model.phone_number}}</td>
+						{{#if isEditingCustomer}}
+							<td>{{input classNames="form-control" type="text" value=model.phone_number}}</td>
+						{{else}}
+							<td>{{model.phone_number}}</td>
+						{{/if}}
 						
 					</tr>
 					<tr>
 						<th>E-post: </th>
-						<td>{{model.email_address}}</td>
-						
+						{{#if isEditingCustomer}}
+							<td>{{input classNames="form-control" type="text" value=model.email_address}}</td>
+						{{else}}
+							<td>{{model.email_address}}</td>
+						{{/if}}
 					</tr>
 					<tr>
 						<th>Lånekortsnummer: </th>
-						<td>{{model.library_card_number}}</td>
-						
+						{{#if isEditingCustomer}}
+							<td>{{input classNames="form-control" type="text" value=model.library_card_number}}</td>
+						{{else}}
+							<td>{{model.library_card_number}}</td>
+						{{/if}}
 					</tr>
 					<tr>
 						<th>Kundtyp: </th>
-						<td>{{model.customer_type}}</td>
-						
+						{{#if isEditingCustomer}}
+							<td>{{input classNames="form-control" type="text" value=model.customer_type}}</td>
+						{{else}}
+							<td>{{model.customer_type}}</td>
+						{{/if}}						
 					</tr>
 					<tr>
 						<th>Kommentar: </th>
-						<td>{{model.comments}}</td>
-						
+						{{#if isEditingCustomer}}
+							<td>{{input classNames="form-control" type="text" value=model.comments}}</td>
+						{{else}}
+							<td>{{model.comments}}</td>
+						{{/if}}								
 					</tr>
 					<tr>
 						<th>Formulärspråk: </th>
-						<td>{{model.form_lang}}</td>
-						
+						{{#if isEditingCustomer}}
+							<td>{{input classNames="form-control" type="text" value=model.form_lang}}</td>
+						{{else}}
+							<td>{{model.form_lang}}</td>
+						{{/if}}			
 					</tr>
 					<tr>
 						<th>Fakturanamn: </th>
-						<td>{{model.invoicing_name}}</td>
-						
+						{{#if isEditingCustomer}}
+							<td>{{input classNames="form-control" type="text" value=model.invoicing_name}}</td>
+						{{else}}
+							<td>{{model.invoicing_name}}</td>
+						{{/if}}							
 					</tr>
 					<tr>
 						<th>Fakturaaddress: </th>
-						<td>{{model.invoicing_address}}</td>
-						
+						{{#if isEditingCustomer}}
+							<td>{{input classNames="form-control" type="text" value=model.invoicing_address}}</td>
+						{{else}}
+							<td>{{model.invoicing_address}}</td>
+						{{/if}}		
 					</tr>
 					<tr>
 						<th>invoicing_postal_address1: </th>
-						<td>{{model.invoicing_postal_address1}}</td>
-						
+						{{#if isEditingCustomer}}
+							<td>{{input classNames="form-control" type="text" value=model.invoicing_postal_address1}}</td>
+						{{else}}
+							<td>{{model.invoicing_postal_address1}}</td>
+						{{/if}}								
 					</tr>
 					<tr>
 						<th>invoicing_postal_address1: </th>
-						<td>{{model.invoicing_postal_address2}}</td>
-						
+						{{#if isEditingCustomer}}
+							<td>{{input classNames="form-control" type="text" value=model.invoicing_postal_address2}}</td>
+						{{else}}
+							<td>{{model.invoicing_postal_address2}}</td>
+						{{/if}}								
 					</tr>
 		
 				</table>
@@ -235,9 +291,9 @@
 							<th>Kopia (om lån ej möjligt): </th>
 							<td>
 								{{#if isEditingOrder}}
-									{{input classNames="form-control" type="text" value=model.photocopiesIfLoanNotPossible}}
+									{{view Ember.Select classNames="form-control" content=photocopiesIfLoanNotPossible optionValuePath="content.value" optionLabelPath="content.label" value=model.photocopiesIfLoanNotPossible}}
 								{{else}}
-									{{model.photocopiesIfLoanNotPossible}}
+									{{convertBooleanToDisplayText model.photocopiesIfLoanNotPossible}}
 								{{/if}}
 							</td>
 						</tr>
@@ -245,9 +301,9 @@
 							<th>Utanför skandinavien: </th>
 							<td>
 								{{#if isEditingOrder}}
-									{{input classNames="form-control" type="text" value=model.orderOutsideScandinavia}}
+									{{view Ember.Select classNames="form-control" content=orderOutsideScandinavia optionValuePath="content.value" optionLabelPath="content.label" value=model.orderOutsideScandinavia}}
 								{{else}}
-									{{model.orderOutsideScandinavia}}
+									{{convertBooleanToDisplayText model.orderOutsideScandinavia}}
 								{{/if}}
 							</td>
 						</tr>
@@ -255,9 +311,9 @@
 							<th>E-post konfirmation: </th>
 							<td>
 								{{#if isEditingOrder}}
-									{{input classNames="form-control" type="text" value=model.emailConfirmation}}
+									{{view Ember.Select classNames="form-control" content=emailConfirmation optionValuePath="content.value" optionLabelPath="content.label" value=model.emailConfirmation}}
 								{{else}}
-									{{model.emailConfirmation}}
+									{{convertBooleanToDisplayText model.emailConfirmation}}
 								{{/if}}
 							</td>
 						</tr>

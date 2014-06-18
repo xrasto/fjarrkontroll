@@ -57,9 +57,9 @@
 											    <i class="fa fa-male"></i> {{getUserName item.userId}} <span class="caret"></span>
 											  </button>
 											  <ul class="dropdown-menu" role="menu">
-											    <li><a href="#" {{action switchOwner}}<i class="fa fa-male"></i> {{getUserName App.currentUser}}</a>
+											    <li><a href="#" {{action switchOwner item.id item.userId}}<i class="fa fa-male"></i> {{getUserName App.currentUser}}</a>
 											   	</li>
-											    <li><a {{action removeOwner}} href="#">Släpp order</a></li>	
+											    <li><a {{action removeOwner item.id}} href="#">Släpp order</a></li>	
 											  </ul>
 											</div>
 										{{else}}
@@ -68,8 +68,8 @@
 											    <i class="fa fa-question-circle"></i> Ingen <span class="caret"></span>
 											  </button>
 											  <ul class="dropdown-menu" role="menu">
-											    <li><a {{action switchOwner}} href="#"><i class="fa fa-male"></i> {{getUserName App.currentUser}}</a></li>
-											    <li><a href="#">Släpp order</a></li>	
+											    <li><a {{action switchOwner item.id App.currentUser}} href="#"><i class="fa fa-male"></i> {{getUserName App.currentUser}}</a></li>
+											    <li><a {{action removeOwner item.id}} href="#">Släpp order</a></li>		
 											  </ul>
 											</div>
 										{{/if}}
